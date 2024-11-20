@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #004080, #0066cc);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 500;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        /* Language Toggle */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            border-radius: 20px;
+            padding: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-switcher button {
+            border: none;
+            background: none;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .language-switcher .active {
+            background: #0066cc;
+            color: white;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h3 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .floating-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #004080;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 1em;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .floating-contact:hover {
+            background: #003366;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h3 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            color: #666;
+        }
+
+        .modal-close {
+            background: #004080;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #003366;
+        }
+    </style>
+    <script>
+        function toggleLanguage(lang) {
+            const enElements = document.querySelectorAll('.en');
+            const frElements = document.querySelectorAll('.fr');
+            if (lang === 'en') {
+                enElements.forEach(el => el.style.display = 'block');
+                frElements.forEach(el => el.style.display = 'none');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                frElements.forEach(el => el.style.display = 'block');
+            }
+            document.getElementById('en-toggle').classList.toggle('active', lang === 'en');
+            document.getElementById('fr-toggle').classList.toggle('active', lang === 'fr');
+        }
+
+        function openModal(serviceId) {
+            const modal = document.getElementById(serviceId);
+            modal.style.display = 'flex';
+        }
+
+        function closeModal(serviceId) {
+            const modal = document.getElementById(serviceId);
+            modal.style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleLanguage('fr'); // Set default language to French
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Veritech</h1>
+        <p class="en">Empowering Digital Transformation</p>
+        <p class="fr">Favoriser la Transformation Digitale</p>
+        <div class="language-switcher">
+            <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active">FR</button>
+            <button id="en-toggle" onclick="toggleLanguage('en')">EN</button>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+<section>
+    <h2 class="en">Our Services</h2>
+    <h2 class="fr">Nos Services</h2>
+    <div class="services-container">
+        <!-- Service 1 -->
+        <div class="service" onclick="openModal('service1')">
+            <h3 class="en">Digitization Solutions</h3>
+            <h3 class="fr">Solutions de Numérisation</h3>
+            <p class="en">Transform physical documents into digital formats with efficiency and compliance.</p>
+            <p class="fr">Transformez vos documents physiques en formats numériques avec efficacité et conformité.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service" onclick="openModal('service2')">
+            <h3 class="en">Custom Software Development</h3>
+            <h3 class="fr">Développement de Logiciels Personnalisés</h3>
+            <p class="en">Tailored software solutions to meet the specific needs of diverse industries.</p>
+            <p class="fr">Des solutions logicielles sur mesure adaptées aux besoins spécifiques de divers secteurs.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service" onclick="openModal('service3')">
+            <h3 class="en">Maintenance and Support</h3>
+            <h3 class="fr">Maintenance et Support</h3>
+            <p class="en">Continuous maintenance to ensure performance, reliability, and security.</p>
+            <p class="fr">Maintenance continue pour garantir la performance, la fiabilité et la sécurité.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service" onclick="openModal('service4')">
+            <h3 class="en">System Integration</h3>
+            <h3 class="fr">Intégration des Systèmes Informatiques</h3>
+            <p class="en">Seamlessly integrate existing systems with our solutions.</p>
+            <p class="fr">Intégrez parfaitement les systèmes existants avec nos solutions.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service" onclick="openModal('service5')">
+            <h3 class="en">Software Reselling</h3>
+            <h3 class="fr">Revente des Logiciels</h3>
+            <p class="en">Distribute third-party software to complement our solutions.</p>
+            <p class="fr">Distribuez des logiciels tiers pour compléter nos solutions.</p>
+        </div>
+
+           </div>
+</section>
+
+<!-- Modals for Services -->
+<div id="service1" class="modal">
+    <div class="modal-content">
+        <h3 class="en">Digitization Solutions</h3>
+        <h3 class="fr">Solutions de Numérisation</h3>
+        <p class="en">Our digitization solutions provide advanced proprietary software to transform physical documents into digital formats, ensuring efficient archiving and quick information retrieval while adhering to regulatory requirements.</p>
+        <p class="fr">Nos solutions de numérisation offrent des logiciels propriétaires avancés pour transformer les documents physiques en formats numériques, garantissant un archivage efficace et une récupération rapide des informations tout en respectant les exigences réglementaires.</p>
+        <button class="modal-close" onclick="closeModal('service1')">Close</button>
+    </div>
+</div>
+
+<div id="service2" class="modal">
+    <div class="modal-content">
+        <h3 class="en">Custom Software Development</h3>
+        <h3 class="fr">Développement de Logiciels Personnalisés</h3>
+        <p class="en">We design and develop custom software tailored to specific business needs, combining technological innovations and in-depth industry knowledge to create efficient, scalable, and adaptive solutions.</p>
+        <p class="fr">Nous concevons et développons des logiciels sur mesure adaptés aux besoins spécifiques des entreprises, en combinant des innovations technologiques et une connaissance approfondie des secteurs pour créer des solutions efficaces, évolutives et adaptées.</p>
+        <button class="modal-close" onclick="closeModal('service2')">Close</button>
+    </div>
+</div>
+
+<div id="service3" class="modal">
+    <div class="modal-content">
+        <h3 class="en">Maintenance and Support</h3>
+        <h3 class="fr">Maintenance et Support</h3>
+        <p class="en">Our maintenance services ensure continuous performance, reliability, and security of your software solutions, along with responsive technical support for optimal usage.</p>
+        <p class="fr">Nos services de maintenance garantissent la performance, la fiabilité et la sécurité continues de vos solutions logicielles, accompagnés d'un support technique réactif pour une utilisation optimale.</p>
+        <button class="modal-close" onclick="closeModal('service3')">Close</button>
+    </div>
+</div>
+
+<div id="service4" class="modal">
+    <div class="modal-content">
+        <h3 class="en">System Integration</h3>
+        <h3 class="fr">Intégration des Systèmes Informatiques</h3>
+        <p class="en">We enable seamless interoperability between our solutions and existing systems through platform integration, database synchronization, and business process automation.</p>
+        <p class="fr">Nous permettons une interopérabilité fluide entre nos solutions et les systèmes existants grâce à l'intégration des plateformes, la synchronisation des bases de données et l'automatisation des processus métiers.</p>
+        <button class="modal-close" onclick="closeModal('service4')">Close</button>
+    </div>
+</div>
+
+<div id="service5" class="modal">
+    <div class="modal-content">
+        <h3 class="en">Software Reselling</h3>
+        <h3 class="fr">Revente des Logiciels</h3>
+        <p class="en">We distribute and resell third-party software selected for their excellence and compatibility with our offerings, providing clients with comprehensive, tailored solutions.</p>
+        <p class="fr">Nous distribuons et revendons des logiciels tiers sélectionnés pour leur excellence et leur compatibilité avec nos offres, offrant ainsi aux clients des solutions complètes et adaptées.</p>
+        <button class="modal-close" onclick="closeModal('service5')">Close</button>
+    </div>
+</div>
+
+    <footer>
+        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+    </footer>
+</body>
+</html>
