@@ -37,6 +37,25 @@
         document.addEventListener('DOMContentLoaded', () => {
             toggleLanguage('fr'); // Set default language to French
         });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        let isMenuActive = false; 
+
+        function toggleMenu() {
+            const navMenu = document.querySelector(".nav-wrapper");
+            isMenuActive = !isMenuActive;
+            navMenu.classList.toggle("active", isMenuActive); 
+        }
+
+        function closeMenu() {
+            const navMenu = document.querySelector(".nav-wrapper");
+            isMenuActive = false; 
+            navMenu.classList.remove("active"); 
+        }
+
     </script>
 </head>
 
@@ -47,33 +66,40 @@
                 <img src="images/logo/logo-white-no-bg.png" alt="Company Logo">
             </a>
         </div>
-        <div>
-            <h1>Veri-Tech</h1>
-        </div>
-        <nav>
-            <a class="en" href="#about">About Us</a>
-            <a class="fr" href="#about">À Propos de Nous</a>
-            <a class="en" href="#services">Our Services</a>
-            <a class="fr" href="#services">Nos Services</a>
-            <a class="en" href="#why">Why Choose Us</a>
-            <a class="fr" href="#why">Pourquoi Nous</a>
-            <a class="en" href="#values">Our Values</a>
-            <a class="fr" href="#values">Nos Valeurs</a>
-            <a class="en" href="#contact">Contact</a>
-            <a class="fr" href="#contact">Contactez Nous</a>
-        </nav>
-
-        <div class="language-switcher">
-            <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active">FR</button>
-            <button id="en-toggle" onclick="toggleLanguage('en')">EN</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-wrapper" id="nav-menu">
+            <nav>
+                <a class="en" href="#about" onclick="closeMenu()">About Us</a>
+                <a class="fr" href="#about" onclick="closeMenu()">À Propos de Nous</a>
+                <a class="en" href="#services" onclick="closeMenu()">Our Services</a>
+                <a class="fr" href="#services" onclick="closeMenu()">Nos Services</a>
+                <a class="en" href="#why-choose-us" onclick="closeMenu()">Why Choose Us</a>
+                <a class="fr" href="#why-choose-us" onclick="closeMenu()">Pourquoi Nous</a>
+                <a class="en" href="#values" onclick="closeMenu()">Our Values</a>
+                <a class="fr" href="#values" onclick="closeMenu()">Nos Valeurs</a>
+                <a class="en" href="#contact" onclick="closeMenu()">Contact</a>
+                <a class="fr" href="#contact" onclick="closeMenu()">Contactez Nous</a>
+            </nav>
+            <div class="language-switcher">
+                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active">FR</button>
+                <button id="en-toggle" onclick="toggleLanguage('en')">EN</button>
+            </div>
         </div>
     </header>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Floating Home Button -->
+    <button id="home-button" onclick="scrollToTop()" title="Go to top">
+        <img src="images/icons/home-icon.png" alt="Home" style="width: 24px; height: 24px;">
+    </button>
+
 
     <!-- About Us Section -->
     <section id="about-us" class="about-us">
         <div class="about-text">
-            <h2 class="en">About Us</h2>
-            <h2 class="fr">À Propos de Nous</h2>
+            <h2 class="en">About Veritech</h2>
+            <h2 class="fr">À Propos de Veritech</h2>
             <p class="en">At our company, we are committed to providing the most advanced and efficient digitization and
                 archiving solutions. With a focus on innovation and excellence, we offer one of the best Enterprise
                 Content Management Systems (ECMS) designed to meet the diverse needs of businesses today.</p>

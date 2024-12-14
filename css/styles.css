@@ -16,48 +16,126 @@ header {
     background: linear-gradient(to right, #004080, #0066cc);
     color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    display: flex;
-    max-height: 250px;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 500;
+    margin: 10px 0;
 }
 
-header p {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-top: 10px;
-}
-
-/* Styling the Logo */
-.header .logo img {
-    height: 50px;
+/* Logo */
+.logo img {
+    height: 40px;
     width: auto;
 }
 
-/* Styling the Company Name */
-.header .company-name h1 {
-    font-size: 2em;
-    margin: 0;
-    /* Removes default margin */
-    font-weight: 700;
+/* Default styles for larger screens */
+.nav-wrapper {
+    display: flex;
+    /* Show menu by default */
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
+/* Hide nav-wrapper on smaller screens and stack items vertically */
+@media screen and (max-width: 768px) {
+    .nav-wrapper {
+        display: none;
+        /* Hide by default */
+        flex-direction: column;
+        /* Stack menu items vertically */
+        align-items: center;
+        background-color: #004080;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-wrapper.active {
+        display: flex;
+        /* Show when active */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        /* Stack nav items vertically */
+        gap: 15px;
+        /* Space between items */
+        justify-content: center;
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    nav a {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        /* Make the links bigger for readability */
+        text-align: center;
+        /* Center the text */
+    }
+}
+
+/* Hamburger button default */
+.hamburger {
+    display: none;
+    /* Hidden by default for larger screens */
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
+
+/* Show hamburger button on smaller screens */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show on smaller screens */
+    }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.9em;
+}
+
+nav a:hover {
+    background-color: #fff;
+    color: #333;
+}
 
 /* Language Toggle */
 .language-switcher {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     background: white;
     border-radius: 20px;
     padding: 5px;
@@ -67,7 +145,7 @@ header p {
 .language-switcher button {
     border: none;
     background: none;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: bold;
     cursor: pointer;
     padding: 5px 10px;
@@ -80,6 +158,79 @@ header p {
     color: white;
 }
 
+
+/* Floating Home Button */
+#home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#home-button img {
+    display: block;
+}
+
+#home-button:hover {
+    background-color: #004080;
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .nav-wrapper {
+        flex-direction: column;
+    }
+
+    nav {
+        order: 1;
+        margin-top: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .language-switcher {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}
+
+/*Sections*/
+
 section {
     max-width: 1200px;
     margin: 20px auto;
@@ -91,27 +242,6 @@ h2 {
     color: #004080;
     margin-bottom: 30px;
     font-size: 2em;
-}
-
-nav {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav a:hover {
-    background-color: #fff;
-    color: #333;
 }
 
 .services-container {
