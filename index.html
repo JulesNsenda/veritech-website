@@ -1,194 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veritech</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+    <link rel="stylesheet" href="css/styles.css">
 
-        header {
-            background: linear-gradient(to right, #004080, #0066cc);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            position: relative;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            font-weight: 500;
-        }
-
-        header p {
-            font-size: 1.2em;
-            font-weight: 300;
-            margin-top: 10px;
-        }
-
-        /* Language Toggle */
-        .language-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            border-radius: 20px;
-            padding: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .language-switcher button {
-            border: none;
-            background: none;
-            font-size: 0.9em;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 15px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .language-switcher .active {
-            background: #0066cc;
-            color: white;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #004080;
-            margin-bottom: 30px;
-            font-size: 2em;
-        }
-
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .service {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .service:hover {
-            transform: translateY(-10px);
-        }
-
-        .service h3 {
-            color: #004080;
-            margin-bottom: 15px;
-        }
-
-        .floating-contact {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #004080;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50px;
-            font-size: 1em;
-            text-decoration: none;
-            font-weight: 500;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .floating-contact:hover {
-            background: #003366;
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        footer p {
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal-content h3 {
-            color: #004080;
-            margin-bottom: 15px;
-        }
-
-        .modal-content p {
-            color: #666;
-        }
-
-        .modal-close {
-            background: #004080;
-            color: white;
-            padding: 10px 15px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .modal-close:hover {
-            background: #003366;
-        }
-    </style>
     <script>
         function toggleLanguage(lang) {
             const enElements = document.querySelectorAll('.en');
@@ -219,119 +39,326 @@
         });
     </script>
 </head>
+
 <body>
     <header>
-        <h1>Veritech</h1>
-        <p class="en">Empowering Digital Transformation</p>
-        <p class="fr">Favoriser la Transformation Digitale</p>
+        <div class="logo">
+            <a href="#about">
+                <img src="images/logo/logo-white-no-bg.png" alt="Company Logo">
+            </a>
+        </div>
+        <div>
+            <h1>Veri-Tech</h1>
+        </div>
+        <nav>
+            <a class="en" href="#about">About Us</a>
+            <a class="fr" href="#about">À Propos de Nous</a>
+            <a class="en" href="#services">Our Services</a>
+            <a class="fr" href="#services">Nos Services</a>
+            <a class="en" href="#why">Why Choose Us</a>
+            <a class="fr" href="#why">Pourquoi Nous</a>
+            <a class="en" href="#values">Our Values</a>
+            <a class="fr" href="#values">Nos Valeurs</a>
+            <a class="en" href="#contact">Contact</a>
+            <a class="fr" href="#contact">Contactez Nous</a>
+        </nav>
+
         <div class="language-switcher">
             <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active">FR</button>
             <button id="en-toggle" onclick="toggleLanguage('en')">EN</button>
         </div>
     </header>
 
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+        <div class="about-text">
+            <h2 class="en">About Us</h2>
+            <h2 class="fr">À Propos de Nous</h2>
+            <p class="en">At our company, we are committed to providing the most advanced and efficient digitization and
+                archiving solutions. With a focus on innovation and excellence, we offer one of the best Enterprise
+                Content Management Systems (ECMS) designed to meet the diverse needs of businesses today.</p>
+            <p class="fr">Dans notre entreprise, nous nous engageons à fournir les solutions de numérisation et
+                d'archivage les plus avancées et efficaces. Avec un accent sur l'innovation et l'excellence, nous
+                offrons l'un des meilleurs systèmes de gestion de contenu d'entreprise (ECMS), conçu pour répondre aux
+                divers besoins des entreprises d'aujourd'hui.</p>
+            <p class="en">Our ECMS is not just a tool; it is a comprehensive solution that allows businesses to
+                efficiently store, manage, and retrieve documents with ease. We help streamline workflows, ensure
+                compliance, and improve productivity by providing solutions that are both scalable and secure.</p>
+            <p class="fr">Notre ECMS n'est pas simplement un outil ; c'est une solution complète qui permet aux
+                entreprises de stocker, gérer et récupérer des documents efficacement. Nous aidons à rationaliser les
+                flux de travail, à garantir la conformité et à améliorer la productivité en fournissant des solutions à
+                la fois évolutives et sécurisées.</p>
+            <p class="en">We understand the importance of digital transformation in today's fast-paced world, and we aim
+                to support businesses in their journey towards a paperless future. By offering top-tier solutions, we
+                ensure that our clients can easily manage their content and make informed decisions with confidence.</p>
+            <p class="fr">Nous comprenons l'importance de la transformation numérique dans le monde d'aujourd'hui, et
+                nous visons à soutenir les entreprises dans leur transition vers un avenir sans papier. En offrant des
+                solutions de premier ordre, nous garantissons que nos clients peuvent facilement gérer leur contenu et
+                prendre des décisions éclairées en toute confiance.</p>
+        </div>
+    </section>
+
     <!-- Services Section -->
-<section>
-    <h2 class="en">Our Services</h2>
-    <h2 class="fr">Nos Services</h2>
-    <div class="services-container">
-        <!-- Service 1 -->
-        <div class="service" onclick="openModal('service1')">
+    <section id="services">
+        <h2 class="en">Our Services</h2>
+        <h2 class="fr">Nos Services</h2>
+        <div class="services-container">
+            <!-- Service 1 -->
+            <div class="service" onclick="openModal('service1')">
+                <div class="service-icon">
+                    <img src="images/icons/cloud-network.png" alt="Digitization Solutions">
+                </div>
+                <h3 class="en">Digitization Solutions</h3>
+                <h3 class="fr">Solutions de Numérisation</h3>
+                <p class="en">Transform physical documents into digital formats with efficiency and compliance.</p>
+                <p class="fr">Transformez vos documents physiques en formats numériques avec efficacité et conformité.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service" onclick="openModal('service2')">
+                <div class="service-icon">
+                    <img src="images/icons/app-development.png" alt="Custom Software Development">
+                </div>
+                <h3 class="en">Custom Software Development</h3>
+                <h3 class="fr">Développement de Logiciels Personnalisés</h3>
+                <p class="en">Tailored software solutions to meet the specific needs of diverse industries.</p>
+                <p class="fr">Des solutions logicielles sur mesure adaptées aux besoins spécifiques de divers secteurs.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service" onclick="openModal('service3')">
+                <div class="service-icon">
+                    <img src="images/icons/technical-support.png" alt="Maintenance and Support">
+                </div>
+                <h3 class="en">Maintenance and Support</h3>
+                <h3 class="fr">Maintenance et Support</h3>
+                <p class="en">Continuous maintenance to ensure performance, reliability, and security.</p>
+                <p class="fr">Maintenance continue pour garantir la performance, la fiabilité et la sécurité.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service" onclick="openModal('service4')">
+                <div class="service-icon">
+                    <img src="images/icons/system-integration.png" alt="System Integration">
+                </div>
+                <h3 class="en">System Integration</h3>
+                <h3 class="fr">Intégration des Systèmes Informatiques</h3>
+                <p class="en">Seamlessly integrate existing systems with our solutions.</p>
+                <p class="fr">Intégrez parfaitement les systèmes existants avec nos solutions.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service" onclick="openModal('service5')">
+                <div class="service-icon">
+                    <img src="images/icons/software.png" alt="Software Reselling">
+                </div>
+                <h3 class="en">Software Reselling</h3>
+                <h3 class="fr">Revente des Logiciels</h3>
+                <p class="en">Distribute third-party software to complement our solutions.</p>
+                <p class="fr">Distribuez des logiciels tiers pour compléter nos solutions.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modals for Services -->
+    <div id="service1" class="modal">
+        <div class="modal-content">
             <h3 class="en">Digitization Solutions</h3>
             <h3 class="fr">Solutions de Numérisation</h3>
-            <p class="en">Transform physical documents into digital formats with efficiency and compliance.</p>
-            <p class="fr">Transformez vos documents physiques en formats numériques avec efficacité et conformité.</p>
+            <p class="en">Our digitization solutions provide advanced proprietary software to transform physical
+                documents into digital formats, ensuring efficient archiving and quick information retrieval while
+                adhering to regulatory requirements.</p>
+            <p class="fr">Nos solutions de numérisation offrent des logiciels propriétaires avancés pour transformer les
+                documents physiques en formats numériques, garantissant un archivage efficace et une récupération rapide
+                des informations tout en respectant les exigences réglementaires.</p>
+            <button class="modal-close" onclick="closeModal('service1')">Close</button>
         </div>
+    </div>
 
-        <!-- Service 2 -->
-        <div class="service" onclick="openModal('service2')">
+    <div id="service2" class="modal">
+        <div class="modal-content">
             <h3 class="en">Custom Software Development</h3>
             <h3 class="fr">Développement de Logiciels Personnalisés</h3>
-            <p class="en">Tailored software solutions to meet the specific needs of diverse industries.</p>
-            <p class="fr">Des solutions logicielles sur mesure adaptées aux besoins spécifiques de divers secteurs.</p>
+            <p class="en">We design and develop custom software tailored to specific business needs, combining
+                technological innovations and in-depth industry knowledge to create efficient, scalable, and adaptive
+                solutions.</p>
+            <p class="fr">Nous concevons et développons des logiciels sur mesure adaptés aux besoins spécifiques des
+                entreprises, en combinant des innovations technologiques et une connaissance approfondie des secteurs
+                pour créer des solutions efficaces, évolutives et adaptées.</p>
+            <button class="modal-close" onclick="closeModal('service2')">Close</button>
         </div>
+    </div>
 
-        <!-- Service 3 -->
-        <div class="service" onclick="openModal('service3')">
+    <div id="service3" class="modal">
+        <div class="modal-content">
             <h3 class="en">Maintenance and Support</h3>
             <h3 class="fr">Maintenance et Support</h3>
-            <p class="en">Continuous maintenance to ensure performance, reliability, and security.</p>
-            <p class="fr">Maintenance continue pour garantir la performance, la fiabilité et la sécurité.</p>
+            <p class="en">Our maintenance services ensure continuous performance, reliability, and security of your
+                software solutions, along with responsive technical support for optimal usage.</p>
+            <p class="fr">Nos services de maintenance garantissent la performance, la fiabilité et la sécurité continues
+                de vos solutions logicielles, accompagnés d'un support technique réactif pour une utilisation optimale.
+            </p>
+            <button class="modal-close" onclick="closeModal('service3')">Close</button>
         </div>
+    </div>
 
-        <!-- Service 4 -->
-        <div class="service" onclick="openModal('service4')">
+    <div id="service4" class="modal">
+        <div class="modal-content">
             <h3 class="en">System Integration</h3>
             <h3 class="fr">Intégration des Systèmes Informatiques</h3>
-            <p class="en">Seamlessly integrate existing systems with our solutions.</p>
-            <p class="fr">Intégrez parfaitement les systèmes existants avec nos solutions.</p>
+            <p class="en">We enable seamless interoperability between our solutions and existing systems through
+                platform integration, database synchronization, and business process automation.</p>
+            <p class="fr">Nous permettons une interopérabilité fluide entre nos solutions et les systèmes existants
+                grâce à l'intégration des plateformes, la synchronisation des bases de données et l'automatisation des
+                processus métiers.</p>
+            <button class="modal-close" onclick="closeModal('service4')">Close</button>
         </div>
+    </div>
 
-        <!-- Service 5 -->
-        <div class="service" onclick="openModal('service5')">
+    <div id="service5" class="modal">
+        <div class="modal-content">
             <h3 class="en">Software Reselling</h3>
             <h3 class="fr">Revente des Logiciels</h3>
-            <p class="en">Distribute third-party software to complement our solutions.</p>
-            <p class="fr">Distribuez des logiciels tiers pour compléter nos solutions.</p>
+            <p class="en">We distribute and resell third-party software selected for their excellence and compatibility
+                with our offerings, providing clients with comprehensive, tailored solutions.</p>
+            <p class="fr">Nous distribuons et revendons des logiciels tiers sélectionnés pour leur excellence et leur
+                compatibilité avec nos offres, offrant ainsi aux clients des solutions complètes et adaptées.</p>
+            <button class="modal-close" onclick="closeModal('service5')">Close</button>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="why-choose-text">
+            <h2 class="en">Why Choose Us?</h2>
+            <h2 class="fr">Pourquoi Nous Choisir ?</h2>
+            <p class="en">We are passionate about delivering state-of-the-art digitization and archiving solutions to
+                meet the demands of modern businesses. Here are some of the key reasons why we stand out:</p>
+            <p class="fr">Nous sommes passionnés par la fourniture de solutions de numérisation et d'archivage à la
+                pointe de la technologie pour répondre aux besoins des entreprises modernes. Voici quelques-unes des
+                principales raisons pour lesquelles nous nous distinguons :</p>
+
+            <ul class="en">
+                <li><strong>Advanced Enterprise Content Management System (ECMS)</strong>: Our ECMS offers unparalleled
+                    efficiency, allowing businesses to streamline document management, improve collaboration, and
+                    enhance productivity.</li>
+                <li><strong>Scalable and Secure Solutions</strong>: We provide scalable solutions that grow with your
+                    business needs, ensuring data security and compliance at all times.</li>
+                <li><strong>Paperless Transformation</strong>: We help businesses transition to a paperless environment,
+                    reducing costs, increasing efficiency, and improving sustainability.</li>
+                <li><strong>Tailored Solutions</strong>: Our solutions are customized to fit the unique needs of each
+                    business, ensuring optimal performance and satisfaction.</li>
+                <li><strong>Expert Support</strong>: Our team of experts is available to provide ongoing support,
+                    ensuring that your systems are running smoothly and that you get the most out of our solutions.</li>
+            </ul>
+
+            <ul class="fr">
+                <li><strong>Système de gestion de contenu d'entreprise (ECMS) avancé</strong>: Notre ECMS offre une
+                    efficacité inégalée, permettant aux entreprises de rationaliser la gestion des documents,
+                    d'améliorer la collaboration et d'augmenter la productivité.</li>
+                <li><strong>Solutions évolutives et sécurisées</strong>: Nous fournissons des solutions évolutives qui
+                    croissent avec les besoins de votre entreprise, garantissant la sécurité des données et la
+                    conformité en tout temps.</li>
+                <li><strong>Transformation sans papier</strong>: Nous aidons les entreprises à passer à un environnement
+                    sans papier, réduisant les coûts, augmentant l'efficacité et améliorant la durabilité.</li>
+                <li><strong>Solutions sur mesure</strong>: Nos solutions sont personnalisées pour s'adapter aux besoins
+                    uniques de chaque entreprise, garantissant des performances optimales et la satisfaction.</li>
+                <li><strong>Support d'experts</strong>: Notre équipe d'experts est disponible pour fournir un support
+                    continu, garantissant que vos systèmes fonctionnent sans problème et que vous tiriez le meilleur
+                    parti de nos solutions.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Our Values Section -->
+    <section id="values">
+        <h2 class="en">Our Values</h2>
+        <h2 class="fr">Nos Valeurs</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="images/icons/integrity.png" alt="Icon 1">
+                </div>
+                <div class="value-description">
+                    <h3 class="en">Integrity</h3>
+                    <h3 class="fr">Intégrité</h3>
+                    <p class="en">We maintain the highest ethical standards, ensuring transparency, honesty, and
+                        accountability in everything we do.</p>
+                    <p class="fr">Nous maintenons les normes éthiques les plus élevées, garantissant la transparence,
+                        l'honnêteté et la responsabilité dans tout ce que nous faisons.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="images/icons/idea.png" alt="Icon 2">
+                </div>
+                <div class="value-description">
+                    <h3 class="en">Innovation</h3>
+                    <h3 class="fr">Innovation</h3>
+                    <p class="en">We are committed to continuous improvement and creative solutions that push the
+                        boundaries of technology.</p>
+                    <p class="fr">Nous nous engageons à améliorer en permanence et à trouver des solutions créatives qui
+                        repoussent les limites de la technologie.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="images/icons/target.png" alt="Icon 3">
+                </div>
+                <div class="value-description">
+                    <h3 class="en">Customer-Centric</h3>
+                    <h3 class="fr">Orientation Client</h3>
+                    <p class="en">Our clients' success is our success. We put our clients' needs first and strive to
+                        exceed their expectations.</p>
+                    <p class="fr">Le succès de nos clients est notre succès. Nous mettons les besoins de nos clients en
+                        priorité et nous efforçons de dépasser leurs attentes.</p>
+                </div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <img src="images/icons/collaboration.png" alt="Icon 4">
+                </div>
+                <div class="value-description">
+                    <h3 class="en">Collaboration</h3>
+                    <h3 class="fr">Collaboration</h3>
+                    <p class="en">We believe in the power of teamwork and collective effort. Together, we can achieve
+                        more.</p>
+                    <p class="fr">Nous croyons en la puissance du travail d'équipe et de l'effort collectif. Ensemble,
+                        nous pouvons accomplir plus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-us">
+        <div class="contact-details">
+            <h2 class="en">Contact Us</h2>
+            <h2 class="fr">Contactez Nous</h2>
+            <p>Email: <a href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+            <p class="en">Phone: +27 73 441 2228</p>
+            <p class="fr">Telephone: +27 73 441 2228</p>
+            <p class="en">Location: Immeuble Kazadi. Gombe, Kinshasa RD. Congo</p>
+            <p class="fr">Addresse: Immeuble Kazadi. Gombe, Kinshasa RD. Congo</p>
+            <p class="en">We would love to hear from you! Please reach us through the contact
+                information provided.</p>
+            <p class="fr">Nous aimerions vous entendre! Veuillez communiquer avec nous à l’aide des coordonnées
+                fournies.</p>
         </div>
 
-           </div>
-</section>
+    </section>
 
-<!-- Modals for Services -->
-<div id="service1" class="modal">
-    <div class="modal-content">
-        <h3 class="en">Digitization Solutions</h3>
-        <h3 class="fr">Solutions de Numérisation</h3>
-        <p class="en">Our digitization solutions provide advanced proprietary software to transform physical documents into digital formats, ensuring efficient archiving and quick information retrieval while adhering to regulatory requirements.</p>
-        <p class="fr">Nos solutions de numérisation offrent des logiciels propriétaires avancés pour transformer les documents physiques en formats numériques, garantissant un archivage efficace et une récupération rapide des informations tout en respectant les exigences réglementaires.</p>
-        <button class="modal-close" onclick="closeModal('service1')">Close</button>
-    </div>
-</div>
-
-<div id="service2" class="modal">
-    <div class="modal-content">
-        <h3 class="en">Custom Software Development</h3>
-        <h3 class="fr">Développement de Logiciels Personnalisés</h3>
-        <p class="en">We design and develop custom software tailored to specific business needs, combining technological innovations and in-depth industry knowledge to create efficient, scalable, and adaptive solutions.</p>
-        <p class="fr">Nous concevons et développons des logiciels sur mesure adaptés aux besoins spécifiques des entreprises, en combinant des innovations technologiques et une connaissance approfondie des secteurs pour créer des solutions efficaces, évolutives et adaptées.</p>
-        <button class="modal-close" onclick="closeModal('service2')">Close</button>
-    </div>
-</div>
-
-<div id="service3" class="modal">
-    <div class="modal-content">
-        <h3 class="en">Maintenance and Support</h3>
-        <h3 class="fr">Maintenance et Support</h3>
-        <p class="en">Our maintenance services ensure continuous performance, reliability, and security of your software solutions, along with responsive technical support for optimal usage.</p>
-        <p class="fr">Nos services de maintenance garantissent la performance, la fiabilité et la sécurité continues de vos solutions logicielles, accompagnés d'un support technique réactif pour une utilisation optimale.</p>
-        <button class="modal-close" onclick="closeModal('service3')">Close</button>
-    </div>
-</div>
-
-<div id="service4" class="modal">
-    <div class="modal-content">
-        <h3 class="en">System Integration</h3>
-        <h3 class="fr">Intégration des Systèmes Informatiques</h3>
-        <p class="en">We enable seamless interoperability between our solutions and existing systems through platform integration, database synchronization, and business process automation.</p>
-        <p class="fr">Nous permettons une interopérabilité fluide entre nos solutions et les systèmes existants grâce à l'intégration des plateformes, la synchronisation des bases de données et l'automatisation des processus métiers.</p>
-        <button class="modal-close" onclick="closeModal('service4')">Close</button>
-    </div>
-</div>
-
-<div id="service5" class="modal">
-    <div class="modal-content">
-        <h3 class="en">Software Reselling</h3>
-        <h3 class="fr">Revente des Logiciels</h3>
-        <p class="en">We distribute and resell third-party software selected for their excellence and compatibility with our offerings, providing clients with comprehensive, tailored solutions.</p>
-        <p class="fr">Nous distribuons et revendons des logiciels tiers sélectionnés pour leur excellence et leur compatibilité avec nos offres, offrant ainsi aux clients des solutions complètes et adaptées.</p>
-        <button class="modal-close" onclick="closeModal('service5')">Close</button>
-    </div>
-</div>
 
     <footer>
-        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
-        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
     </footer>
 </body>
+
 </html>
