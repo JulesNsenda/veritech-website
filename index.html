@@ -8,55 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
-
-    <script>
-        function toggleLanguage(lang) {
-            const enElements = document.querySelectorAll('.en');
-            const frElements = document.querySelectorAll('.fr');
-            if (lang === 'en') {
-                enElements.forEach(el => el.style.display = 'block');
-                frElements.forEach(el => el.style.display = 'none');
-            } else {
-                enElements.forEach(el => el.style.display = 'none');
-                frElements.forEach(el => el.style.display = 'block');
-            }
-            document.getElementById('en-toggle').classList.toggle('active', lang === 'en');
-            document.getElementById('fr-toggle').classList.toggle('active', lang === 'fr');
-        }
-
-        function openModal(serviceId) {
-            const modal = document.getElementById(serviceId);
-            modal.style.display = 'flex';
-        }
-
-        function closeModal(serviceId) {
-            const modal = document.getElementById(serviceId);
-            modal.style.display = 'none';
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            toggleLanguage('fr'); // Set default language to French
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        let isMenuActive = false; 
-
-        function toggleMenu() {
-            const navMenu = document.querySelector(".nav-wrapper");
-            isMenuActive = !isMenuActive;
-            navMenu.classList.toggle("active", isMenuActive); 
-        }
-
-        function closeMenu() {
-            const navMenu = document.querySelector(".nav-wrapper");
-            isMenuActive = false; 
-            navMenu.classList.remove("active"); 
-        }
-
-    </script>
 </head>
 
 <body>
@@ -385,6 +336,8 @@
         <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a
                 href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
     </footer>
+
+    <script src="jss/script.js"></script>
 </body>
 
 </html>
