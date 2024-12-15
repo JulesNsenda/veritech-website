@@ -707,3 +707,54 @@ footer a:hover::after {
         box-shadow: none;
     }
 }
+
+/* Mobile Nav Title - Hidden by default */
+.mobile-nav-title {
+    display: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .nav-wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #004080;
+        flex-direction: column;
+        padding: 20px 0;
+        height: 100vh;
+    }
+
+    .nav-wrapper.active {
+        display: flex;
+    }
+
+    /* Show the title only on mobile when menu is active */
+    .mobile-nav-title {
+        display: block;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .language-switcher {
+        margin: 15px auto;
+    }
+}
