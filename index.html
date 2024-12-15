@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veritech</title>
+    <meta name="description"
+        content="Veritech provides advanced digitization and archiving solutions, offering Enterprise Content Management Systems (ECMS) to streamline business processes and digital transformation.">
+    <meta name="keywords"
+        content="digitization, archiving, enterprise content management, ECMS, software development, system integration">
+    <title>Veritech - Digital Transformation Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/styles.css">
-
     <script>
         function toggleLanguage(lang) {
             const enElements = document.querySelectorAll('.en');
@@ -42,31 +44,33 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        let isMenuActive = false; 
+        let isMenuActive = false;
 
         function toggleMenu() {
             const navMenu = document.querySelector(".nav-wrapper");
             isMenuActive = !isMenuActive;
-            navMenu.classList.toggle("active", isMenuActive); 
+            navMenu.classList.toggle("active", isMenuActive);
         }
 
         function closeMenu() {
             const navMenu = document.querySelector(".nav-wrapper");
-            isMenuActive = false; 
-            navMenu.classList.remove("active"); 
+            isMenuActive = false;
+            navMenu.classList.remove("active");
         }
-
     </script>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="#about">
-                <img src="images/logo/logo-white-no-bg.png" alt="Company Logo">
+            <a href="#about" aria-label="Veritech Home">
+                <img src="images/logo/logo-white-no-bg.png" alt="Veritech Logo - Digital Solutions Company">
             </a>
         </div>
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+        </button>
         <div class="nav-wrapper" id="nav-menu">
             <nav>
                 <a class="en" href="#about" onclick="closeMenu()">About Us</a>
@@ -81,8 +85,9 @@
                 <a class="fr" href="#contact" onclick="closeMenu()">Contactez Nous</a>
             </nav>
             <div class="language-switcher">
-                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active">FR</button>
-                <button id="en-toggle" onclick="toggleLanguage('en')">EN</button>
+                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active"
+                    aria-label="Switch to French">FR</button>
+                <button id="en-toggle" onclick="toggleLanguage('en')" aria-label="Switch to English">EN</button>
             </div>
         </div>
     </header>
