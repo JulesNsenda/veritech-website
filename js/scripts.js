@@ -38,14 +38,13 @@ function toggleLanguage(lang) {
         localStorage.setItem('preferredLanguage', lang);
     } catch (error) {
         logError(error, 'toggleLanguage');
-        // Fallback to French if there's an error
         if (lang !== 'fr') {
             toggleLanguage('fr');
         }
     }
 }
 
-// Modal functionality
+// Modal functionality with animations
 function openModal(serviceId) {
     try {
         const modal = document.getElementById(serviceId);
@@ -54,20 +53,32 @@ function openModal(serviceId) {
         }
 
         modal.style.display = 'flex';
+        // Add animation class after a brief delay to trigger transition
+        requestAnimationFrame(() => {
+            modal.classList.add('modal-active');
+        });
 
         // Add event listener for closing on outside click
-        modal.addEventListener('click', function (event) {
+        const closeOnOutsideClick = (event) => {
             if (event.target === modal) {
                 closeModal(serviceId);
             }
-        });
+        };
+        modal.addEventListener('click', closeOnOutsideClick);
 
         // Add escape key listener
-        document.addEventListener('keydown', function (event) {
+        const closeOnEscape = (event) => {
             if (event.key === 'Escape') {
                 closeModal(serviceId);
             }
-        });
+        };
+        document.addEventListener('keydown', closeOnEscape);
+
+        // Store the event listeners for cleanup
+        modal._closeListeners = {
+            click: closeOnOutsideClick,
+            keydown: closeOnEscape
+        };
     } catch (error) {
         logError(error, 'openModal');
     }
@@ -79,64 +90,159 @@ function closeModal(serviceId) {
         if (!modal) {
             throw new Error(`Modal with ID ${serviceId} not found`);
         }
-        modal.style.display = 'none';
+
+        // Remove animation class
+        modal.classList.remove('modal-active');
+
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            modal.style.display = 'none';
+
+            // Clean up event listeners
+            if (modal._closeListeners) {
+                modal.removeEventListener('click', modal._closeListeners.click);
+                document.removeEventListener('keydown', modal._closeListeners.keydown);
+                delete modal._closeListeners;
+            }
+        }, 300); // Match this with your CSS transition duration
     } catch (error) {
         logError(error, 'closeModal');
     }
 }
 
-// Smooth scroll functionality
+// Enhanced scroll behavior
+let lastScroll = 0;
+let scrollTimer = null;
+
+function handleScroll() {
+    try {
+        const currentScroll = window.pageYOffset;
+        const header = document.querySelector('header');
+        const homeButton = document.getElementById('home-button');
+
+        // Header visibility
+        if (header) {
+            header.classList.toggle('header-hidden', currentScroll > lastScroll && currentScroll > 100);
+            header.classList.toggle('header-compact', currentScroll > 50);
+        }
+
+        // Home button visibility
+        if (homeButton) {
+            homeButton.classList.toggle('visible', currentScroll > 300);
+        }
+
+        lastScroll = currentScroll;
+
+        // Clear existing timer
+        if (scrollTimer) clearTimeout(scrollTimer);
+
+        // Set new timer
+        scrollTimer = setTimeout(() => {
+            if (header) header.classList.remove('header-hidden');
+        }, 150);
+    } catch (error) {
+        logError(error, 'handleScroll');
+    }
+}
+
+// Improved smooth scroll
 function scrollToTop() {
     try {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Fallback for browsers that don't support smooth scrolling
+            const duration = 500;
+            const start = window.pageYOffset;
+            const startTime = performance.now();
+
+            function scroll(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+
+                if (progress < 1) {
+                    requestAnimationFrame(scroll);
+                }
+            }
+
+            requestAnimationFrame(scroll);
+        }
     } catch (error) {
         logError(error, 'scrollToTop');
-        // Fallback for browsers that don't support smooth scrolling
         window.scrollTo(0, 0);
     }
 }
 
-// Mobile menu functionality
+// Easing function for smooth scroll
+function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+}
+
+// Enhanced mobile menu functionality
 let isMenuActive = false;
 
 function toggleMenu() {
     try {
-        const navMenu = document.querySelector(".nav-wrapper");
-        if (!navMenu) {
-            throw new Error('Navigation menu not found');
+        const navWrapper = document.querySelector(".nav-wrapper");
+        const hamburger = document.querySelector('.hamburger');
+        const backdrop = document.querySelector('.nav-backdrop') || createBackdrop();
+
+        if (!navWrapper || !hamburger) {
+            throw new Error('Navigation elements not found');
         }
 
         isMenuActive = !isMenuActive;
-        navMenu.classList.toggle("active", isMenuActive);
 
-        // Update aria-expanded state
-        const hamburger = document.querySelector('.hamburger');
-        if (hamburger) {
-            hamburger.setAttribute('aria-expanded', isMenuActive.toString());
-        }
+        // Toggle classes with animation
+        navWrapper.classList.toggle("active", isMenuActive);
+        hamburger.classList.toggle("active", isMenuActive);
+        backdrop.classList.toggle("active", isMenuActive);
+
+        // Update accessibility attributes
+        hamburger.setAttribute('aria-expanded', isMenuActive.toString());
+
+        // Toggle body scroll
+        document.body.style.overflow = isMenuActive ? 'hidden' : '';
+
     } catch (error) {
         logError(error, 'toggleMenu');
     }
 }
 
+function createBackdrop() {
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+    backdrop.addEventListener('click', closeMenu);
+    return backdrop;
+}
+
 function closeMenu() {
     try {
-        const navMenu = document.querySelector(".nav-wrapper");
-        if (!navMenu) {
+        const navWrapper = document.querySelector(".nav-wrapper");
+        const hamburger = document.querySelector('.hamburger');
+        const backdrop = document.querySelector('.nav-backdrop');
+
+        if (!navWrapper) {
             throw new Error('Navigation menu not found');
         }
 
         isMenuActive = false;
-        navMenu.classList.remove("active");
-
-        // Update aria-expanded state
-        const hamburger = document.querySelector('.hamburger');
+        navWrapper.classList.remove("active");
         if (hamburger) {
+            hamburger.classList.remove("active");
             hamburger.setAttribute('aria-expanded', 'false');
         }
+        if (backdrop) {
+            backdrop.classList.remove("active");
+        }
+
+        document.body.style.overflow = '';
     } catch (error) {
         logError(error, 'closeMenu');
     }
@@ -145,19 +251,26 @@ function closeMenu() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function () {
     try {
-        // Set initial language based on stored preference or default to French
+        // Set initial language
         const storedLanguage = localStorage.getItem('preferredLanguage') || 'fr';
         toggleLanguage(storedLanguage);
 
-        // Add scroll event listener for showing/hiding scroll-to-top button
+        // Initialize scroll handlers
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Initialize home button
         const homeButton = document.getElementById('home-button');
         if (homeButton) {
-            window.addEventListener('scroll', function () {
-                homeButton.style.display = window.scrollY > 300 ? 'flex' : 'none';
-            });
+            homeButton.style.opacity = '0';
+            homeButton.style.display = 'flex';
+            window.addEventListener('scroll', () => {
+                const shouldShow = window.scrollY > 300;
+                homeButton.style.opacity = shouldShow ? '1' : '0';
+                homeButton.style.pointerEvents = shouldShow ? 'auto' : 'none';
+            }, { passive: true });
         }
 
-        // Add click event listeners for closing modals
+        // Initialize modals
         document.querySelectorAll('.modal').forEach(modal => {
             const closeButton = modal.querySelector('.modal-close');
             if (closeButton) {
@@ -165,6 +278,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     closeModal(modal.id);
                 });
             }
+        });
+
+        // Initialize navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    closeMenu();
+                }
+
+                // Smooth scroll to section
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Add resize handler for menu
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 768 && isMenuActive) {
+                    closeMenu();
+                }
+            }, 250);
         });
 
     } catch (error) {
@@ -177,7 +320,7 @@ window.addEventListener('popstate', function (event) {
     try {
         const modals = document.querySelectorAll('.modal');
         modals.forEach(modal => {
-            if (modal.style.display === 'flex') {
+            if (modal.classList.contains('modal-active')) {
                 closeModal(modal.id);
             }
         });
@@ -185,3 +328,29 @@ window.addEventListener('popstate', function (event) {
         logError(error, 'popstate');
     }
 });
+
+// Add intersection observer for animations
+const observeElements = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe sections and cards
+    document.querySelectorAll('section, .service, .value-card').forEach(el => {
+        observer.observe(el);
+    });
+};
+
+// Initialize observers after DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeElements);
+} else {
+    observeElements();
+}
