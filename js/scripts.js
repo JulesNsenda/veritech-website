@@ -36,6 +36,12 @@ function toggleLanguage(lang) {
 
         // Store language preference
         localStorage.setItem('preferredLanguage', lang);
+
+        // Close the navigation menu if it's open
+        const navWrapper = document.querySelector('.nav-wrapper');
+        if (navWrapper && navWrapper.classList.contains('active')) {
+            closeMenu();
+        }
     } catch (error) {
         logError(error, 'toggleLanguage');
         if (lang !== 'fr') {
