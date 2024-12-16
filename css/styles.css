@@ -1956,3 +1956,175 @@ footer a:hover::after {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Enhanced Mobile Navigation */
+@media screen and (max-width: 768px) {
+
+    /* Nav Wrapper Full Screen Overlay */
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom, #004080, #0066cc);
+        z-index: 1100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .nav-wrapper.active {
+        transform: translateX(0);
+    }
+
+    /* Mobile Nav Title */
+    .mobile-nav-title {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5em;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    /* Navigation Links */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dropdown Enhancements */
+    .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        transform: none;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: white !important;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Close Button */
+    .hamburger {
+        z-index: 1200;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* FAQ Page Mobile Enhancements */
+@media screen and (max-width: 768px) {
+    .faq-container {
+        padding: 10px;
+    }
+
+    .faq-category {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-question {
+        padding: 15px;
+    }
+
+    .faq-answer {
+        padding: 10px 15px;
+    }
+
+    .search-section {
+        padding: 0 10px;
+    }
+
+    .search-input {
+        font-size: 0.95em;
+        padding: 12px 15px;
+    }
+
+    .category-filters {
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .category-btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        margin: 2px;
+    }
+}
+
+/* Use Cases Page Mobile Enhancements */
+@media screen and (max-width: 768px) {
+    .use-cases-header {
+        padding: 0 10px;
+    }
+
+    .filters {
+        gap: 5px;
+        margin: 20px 0;
+    }
+
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.8em;
+        margin: 2px;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .case-study-body {
+        padding: 15px;
+    }
+
+    .key-metrics {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .implementation-timeline {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timeline-point {
+        width: 100%;
+    }
+}
