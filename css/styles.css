@@ -2208,3 +2208,48 @@ footer a:hover::after {
         border-bottom: none;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .nav-wrapper {
+        padding: 10px 0;
+        /* Reduced from 20px */
+    }
+
+    nav a {
+        padding: 10px;
+        /* Reduced from 15px */
+        font-size: 1em;
+        /* Slightly reduced font size */
+    }
+
+    .mobile-nav-title {
+        padding: 10px;
+        /* Reduced padding */
+        margin-bottom: 10px;
+        /* Reduced margin */
+    }
+
+    .dropdown-trigger {
+        padding: 10px;
+        /* Consistent padding */
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px;
+        /* Reduced padding */
+    }
+
+    .language-switcher {
+        margin: 10px auto;
+        /* Reduced margin */
+        padding: 5px;
+        /* Slightly reduced padding */
+    }
+
+    .language-switcher button {
+        padding: 5px 10px;
+        /* Reduced padding */
+        font-size: 0.8em;
+        /* Slightly smaller font */
+    }
+}
