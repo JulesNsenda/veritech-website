@@ -2055,47 +2055,96 @@ footer a:hover::after {
 }
 
 /* FAQ Page Mobile Enhancements */
+/* Adjust main container */
+main {
+    margin-top: 80px;
+    padding: 0;
+    /* Remove default padding */
+    width: 100%;
+}
+
+/* Container styles */
+.container {
+    width: 100%;
+    padding: 0;
+    /* Remove container padding */
+    margin: 0;
+}
+
+/* FAQ section base styles */
+.faqs {
+    width: 100%;
+    padding: 0;
+}
+
+/* FAQ container adjustments */
+.faq-container {
+    width: 100%;
+    max-width: none;
+    /* Remove max-width constraint */
+    padding: 10px;
+    margin: 0;
+}
+
+/* Category container adjustments */
+.faq-category {
+    width: 100%;
+    margin: 0 0 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Search section adjustments */
+.search-section {
+    width: 100%;
+    max-width: none;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Mobile-specific adjustments */
 @media screen and (max-width: 768px) {
+    main {
+        margin-top: 60px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
     .faq-container {
         padding: 10px;
     }
 
     .faq-category {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    .faq-item {
         margin-bottom: 10px;
+        border-radius: 6px;
     }
 
-    .faq-question {
-        padding: 15px;
-    }
-
-    .faq-answer {
-        padding: 10px 15px;
-    }
-
-    .search-section {
-        padding: 0 10px;
+    /* Ensure full width for search elements */
+    .search-box {
+        width: 100%;
     }
 
     .search-input {
-        font-size: 0.95em;
-        padding: 12px 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .category-filters {
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
+        width: 100%;
+        padding: 0 5px;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 375px) {
+    .faq-container {
+        padding: 5px;
     }
 
-    .category-btn {
-        padding: 6px 10px;
-        font-size: 0.8em;
-        margin: 2px;
+    .faq-category {
+        padding: 12px;
     }
 }
 
