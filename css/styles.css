@@ -709,15 +709,23 @@ footer a:hover::after {
 }
 
 /* Mobile Nav Title - Hidden by default */
-.mobile-nav-title {
-    display: none;
-    color: white;
-    font-size: 1.5em;
-    font-weight: 500;
-    padding: 15px 0;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 15px;
+@media screen and (max-width: 768px) {
+    .mobile-nav-title {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5em;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav .mobile-divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 10px 0;
+    }
 }
 
 /* Mobile Styles */
@@ -2126,5 +2134,73 @@ footer a:hover::after {
 
     .timeline-point {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        display: none;
+        position: static;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        opacity: 1;
+        transform: none;
+    }
+
+    .dropdown-trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.3s ease;
+        transform: rotate(0deg);
+    }
+
+    .dropdown-content a {
+        display: block;
+        color: white !important;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-expanded .dropdown-content {
+        display: block;
+        position: static;
+        background: transparent;
+        width: 100%;
+        opacity: 1;
+        transform: none;
+    }
+
+    .mobile-expanded .dropdown-trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 15px;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-expanded .dropdown-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-expanded .dropdown-content a {
+        display: block;
+        color: white !important;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-expanded .dropdown-content a:last-child {
+        border-bottom: none;
     }
 }

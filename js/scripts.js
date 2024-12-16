@@ -380,18 +380,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     dropdownTriggers.forEach(trigger => {
         trigger.addEventListener('click', function (e) {
+            // Toggle only on mobile
             if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const content = this.nextElementSibling;
-                const isVisible = content.style.display === 'block';
+                const dropdown = this.closest('.dropdown');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                const arrow = this.querySelector('.dropdown-arrow');
 
-                // Close all other dropdowns first
-                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-                    dropdown.style.display = 'none';
-                });
+                // Toggle visibility
+                dropdownContent.style.display =
+                    dropdownContent.style.display === 'block' ? 'none' : 'block';
 
-                // Toggle current dropdown
-                content.style.display = isVisible ? 'none' : 'block';
+                // Rotate arrow
+                arrow.style.transform =
+                    dropdownContent.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+        });
+    });
+
+    // Ensure dropdowns reset on resize
+    window.addEventListener('resize', function () {
+        const dropdownContents = document.querySelectorAll('.dropdown-content');
+        dropdownContents.forEach(content => {
+            if (window.innerWidth > 768) {
+                content.style.display = '';
             }
         });
     });
@@ -602,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function sendMail(button) {
     try {
         const subject = button.getAttribute('data-subject');
-        const email = "info@veritech-rdc.com"; 
+        const email = "info@veritech-rdc.com";
         const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
         window.location.href = mailtoLink;
     } catch (error) {
