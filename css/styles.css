@@ -738,7 +738,7 @@ footer a:hover::after {
         width: 100%;
         background-color: #004080;
         flex-direction: column;
-        padding: 20px 0;
+        padding: 10px 0;
         height: 100vh;
     }
 
@@ -749,6 +749,10 @@ footer a:hover::after {
     /* Show the title only on mobile when menu is active */
     .mobile-nav-title {
         display: block;
+        padding: 10px;
+        /* Reduced padding */
+        margin-bottom: 10px;
+        /* Reduced margin */
     }
 
     nav {
@@ -759,7 +763,7 @@ footer a:hover::after {
     nav a {
         width: 100%;
         text-align: center;
-        padding: 12px;
+        padding: 10px;
     }
 
     .language-switcher {
