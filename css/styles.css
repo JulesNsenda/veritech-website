@@ -2209,47 +2209,72 @@ footer a:hover::after {
     }
 }
 
+/* Mobile Navigation Spacing Adjustments */
 @media screen and (max-width: 768px) {
+
+    /* Reduce overall nav wrapper padding */
     .nav-wrapper {
-        padding: 10px 0;
-        /* Reduced from 20px */
+        padding: 5px 0;
     }
 
-    nav a {
-        padding: 10px;
-        /* Reduced from 15px */
-        font-size: 1em;
-        /* Slightly reduced font size */
-    }
-
+    /* Adjust mobile nav title */
     .mobile-nav-title {
-        padding: 10px;
-        /* Reduced padding */
-        margin-bottom: 10px;
-        /* Reduced margin */
+        padding: 8px;
+        margin-bottom: 5px;
+        font-size: 1.2em;
     }
 
+    /* Reduce spacing for nav links */
+    nav a {
+        padding: 8px;
+        margin: 2px 0;
+        font-size: 0.95em;
+    }
+
+    /* Adjust dropdown spacing */
     .dropdown-trigger {
-        padding: 10px;
-        /* Consistent padding */
+        padding: 8px;
     }
 
     .dropdown-content a {
-        padding: 10px 15px;
-        /* Reduced padding */
+        padding: 8px 12px;
     }
 
+    /* Reduce divider margins */
+    .mobile-divider {
+        margin: 5px 0;
+    }
+
+    /* Adjust language switcher spacing */
     .language-switcher {
-        margin: 10px auto;
-        /* Reduced margin */
-        padding: 5px;
-        /* Slightly reduced padding */
+        margin: 8px auto;
+        padding: 3px;
     }
 
     .language-switcher button {
-        padding: 5px 10px;
-        /* Reduced padding */
+        padding: 4px 10px;
         font-size: 0.8em;
-        /* Slightly smaller font */
+    }
+
+    /* Ensure content is more compact */
+    nav {
+        gap: 2px;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 360px) {
+    .nav-wrapper {
+        padding: 3px 0;
+    }
+
+    nav a {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+
+    .mobile-nav-title {
+        padding: 6px;
+        font-size: 1.1em;
     }
 }
