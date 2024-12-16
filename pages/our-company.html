@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Company - Veritech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#about-us" aria-label="Veritech Home">
+                <img src="../images/logo/logo-white-no-bg.png" alt="Veritech Logo - Digital Solutions Company">
+            </a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+        </button>
+        <div class="nav-wrapper" id="nav-menu">
+            <div class="mobile-nav-title">Veritech</div>
+            <nav>
+                <div class="dropdown">
+                    <a class="en dropdown-trigger">About Us <span class="dropdown-arrow">▼</span></a>
+                    <a class="fr dropdown-trigger">À Propos de Nous <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-content">
+                        <a href="our-company.html" class="en">Our Company</a>
+                        <a href="our-company.html" class="fr">Notre Entreprise</a>
+                        <a href="use-cases.html" class="en">Success Stories</a>
+                        <a href="use-cases.html" class="fr">Histoires de Réussite</a>
+                        <a href="faqs.html" class="en">FAQs</a>
+                        <a href="faqs.html" class="fr">FAQs</a>
+                    </div>
+                </div>
+                <a class="en" href="../index.html#services" onclick="closeMenu()">Our Services</a>
+                <a class="fr" href="../index.html#service" onclick="closeMenu()">Nos Services</a>
+                <a class="en" href="../index.html#why-choose-us" onclick="closeMenu()">Why Choose Us</a>
+                <a class="fr" href="../index.html#why-choose-us" onclick="closeMenu()">Pourquoi Nous</a>
+                <a class="en" href="../index.html#values" onclick="closeMenu()">Our Values</a>
+                <a class="fr" href="../index.html#values" onclick="closeMenu()">Nos Valeurs</a>
+                <a class="en" href="../index.html#contact" onclick="closeMenu()">Contact</a>
+                <a class="fr" href="../index.html#contact" onclick="closeMenu()">Contactez Nous</a>
+            </nav>
+            <div class="language-switcher">
+                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active"
+                    aria-label="Switch to French">FR</button>
+                <button id="en-toggle" onclick="toggleLanguage('en')" aria-label="Switch to English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Floating Home Button -->
+    <button id="home-button" onclick="scrollToTop()" title="Go to top">
+        <img src="../images/icons/home-icon.png" alt="Home" style="width: 24px; height: 24px;">
+    </button>
+
+    <main>
+        <!-- Company Overview Section -->
+        <section class="company-overview">
+            <div class="container">
+                <h2 class="en">Our Company</h2>
+                <h2 class="fr">Notre Entreprise</h2>
+
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p class="en">Founded in 2024, Veritech has established itself as a leading provider of digital
+                            transformation solutions in the Democratic Republic of Congo. We specialize in document
+                            digitization, custom software development, and enterprise content management systems.</p>
+                        <p class="fr">Fondée en 2024, Veritech s'est imposée comme un fournisseur leader de solutions de
+                            transformation numérique en République Démocratique du Congo. Nous sommes spécialisés dans
+                            la numérisation de documents, le développement de logiciels sur mesure et les systèmes de
+                            gestion de contenu d'entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-vision">
+            <div class="container">
+                <div class="mission-vision-grid">
+                    <div class="mission-box">
+                        <div class="icon">
+                            <img src="../images/icons/mission.png" alt="Mission Icon">
+                        </div>
+                        <h3 class="en">Our Mission</h3>
+                        <h3 class="fr">Notre Mission</h3>
+                        <p class="en">To empower organizations through innovative digital solutions that enhance
+                            efficiency, reduce costs, and promote sustainable business practices.</p>
+                        <p class="fr">Permettre aux organisations d'améliorer leur efficacité grâce à des solutions
+                            numériques innovantes qui réduisent les coûts et favorisent des pratiques commerciales
+                            durables.</p>
+                    </div>
+
+                    <div class="vision-box">
+                        <div class="icon">
+                            <img src="../images/icons/vision.png" alt="Vision Icon">
+                        </div>
+                        <h3 class="en">Our Vision</h3>
+                        <h3 class="fr">Notre Vision</h3>
+                        <p class="en">To be the leading digital transformation partner in Central Africa, driving
+                            innovation and sustainable development through technology.</p>
+                        <p class="fr">Être le principal partenaire de transformation numérique en Afrique centrale,
+                            stimulant l'innovation et le développement durable grâce à la technologie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Stats Section -->
+        <section class="company-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <p class="en">Clients Served</p>
+                        <p class="fr">Clients Servis</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">1M+</div>
+                        <p class="en">Documents Digitized</p>
+                        <p class="fr">Documents Numérisés</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">20+</div>
+                        <p class="en">Expert Team Members</p>
+                        <p class="fr">Membres d'Équipe Experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="en">Our Partners</h2>
+                <h2 class="fr">Nos Partenaires</h2>
+
+                <div class="partners-grid">
+                    <!-- Add partner logos with hover tooltips -->
+                    <div class="partner-card">
+                        <img src="../images/partners/virtualpostman.png" alt="Virtual Postman Partner">
+                        <div class="partner-info">
+                            <h3>Virtual Postman</h3>
+                            <p class="en">Gold Certified Partner</p>
+                            <p class="fr">Partenaire Certifié Gold</p>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <img src="../images/partners/techamat.png" alt="Techamat Partner">
+                        <div class="partner-info">
+                            <h3>Techamat</h3>
+                            <p class="en">Certified Solution Provider</p>
+                            <p class="fr">Fournisseur de Solutions Certifié</p>
+                        </div>
+                    </div>
+                    <!-- Add more partner cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- System Integrations Section -->
+        <section class="integrations-section">
+            <div class="container">
+                <h2 class="en">System Integrations</h2>
+                <h2 class="fr">Intégrations Système</h2>
+
+                <div class="integration-intro">
+                    <p class="en">We specialize in seamless integration with leading enterprise software solutions,
+                        enabling efficient data flow and process automation across your organization.</p>
+                    <p class="fr">Nous sommes spécialisés dans l'intégration transparente avec les principales solutions
+                        logicielles d'entreprise, permettant un flux de données efficace et l'automatisation des
+                        processus dans votre organisation.</p>
+                </div>
+
+                <div class="integrations-grid">
+                    <!-- ERP Solutions -->
+                    <div class="integration-category">
+                        <h3 class="en">ERP Solutions</h3>
+                        <h3 class="fr">Solutions ERP</h3>
+                        <div class="integration-items">
+                            <div class="integration-item">
+                                <img src="../images/integrations/sage.png" alt="Sage">
+                                <h4>Sage</h4>
+                                <p class="en">Full API integration & database connectivity</p>
+                                <p class="fr">Intégration API complète et connectivité base de données</p>
+                            </div>
+                            <div class="integration-item">
+                                <img src="../images/integrations/microsoft-dynamics.png" alt="Microsoft Dynamics">
+                                <h4>Microsoft Dynamics</h4>
+                                <p class="en">Complete solution integration</p>
+                                <p class="fr">Intégration complète de la solution</p>
+                            </div>
+                            <div class="integration-item">
+                                <img src="../images/integrations/acumatica.png" alt="Acumatica">
+                                <h4>Acumatica</h4>
+                                <p class="en">API-based integration</p>
+                                <p class="fr">Intégration basée sur API</p>
+                            </div>
+                            <div class="integration-item">
+                                <img src="../images/integrations/sap.png" alt="SAP">
+                                <h4>SAP</h4>
+                                <p class="en">Integration through SAP middleware</p>
+                                <p class="fr">Intégration via middleware SAP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CRM & HR Solutions -->
+                    <div class="integration-category">
+                        <h3 class="en">CRM & HR Solutions</h3>
+                        <h3 class="fr">Solutions CRM & RH</h3>
+                        <div class="integration-items">
+                            <div class="integration-item">
+                                <img src="../images/integrations/salesforce.png" alt="Salesforce">
+                                <h4>Salesforce</h4>
+                                <p class="en">Complete API integration</p>
+                                <p class="fr">Intégration API complète</p>
+                            </div>
+                            <div class="integration-item">
+                                <img src="../images/integrations/workday.png" alt="Workday">
+                                <h4>Workday</h4>
+                                <p class="en">Full system integration</p>
+                                <p class="fr">Intégration complète du système</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logistics Solutions -->
+                    <div class="integration-category">
+                        <h3 class="en">Logistics Solutions</h3>
+                        <h3 class="fr">Solutions Logistiques</h3>
+                        <div class="integration-items">
+                            <div class="integration-item">
+                                <img src="../images/integrations/freightware.png" alt="Freightware">
+                                <h4>Freightware</h4>
+                                <p class="en">Complete logistics integration</p>
+                                <p class="fr">Intégration logistique complète</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2 class="en">Client Testimonials</h2>
+            <h2 class="fr">Témoignages des Clients</h2>
+
+            <div class="testimonial-carousel">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)"
+                    aria-label="Previous testimonial">❮</button>
+
+                <div class="testimonial-container">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">❝</div>
+                                <p class="en">"Veritech's digitization solution transformed our workflow. We've seen
+                                    remarkable improvements in efficiency and customer satisfaction."</p>
+                                <p class="fr">"La solution de numérisation de Veritech a transformé notre flux de
+                                    travail. Nous avons constaté des améliorations remarquables en termes d'efficacité
+                                    et de satisfaction client."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>John Smith</h4>
+                                    <p class="en">IT Director</p>
+                                    <p class="fr">Directeur IT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">❝</div>
+                                <p class="en">"The seamless integration of Veritech's document management system has
+                                    revolutionized our operations. Their expert team provided outstanding support
+                                    throughout."</p>
+                                <p class="fr">"L'intégration transparente du système de gestion documentaire de Veritech
+                                    a révolutionné nos opérations. Leur équipe d'experts a fourni un support
+                                    exceptionnel."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Marie Dubois</h4>
+                                    <p class="en">Operations Manager</p>
+                                    <p class="fr">Directrice des Opérations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">❝</div>
+                                <p class="en">"As a growing enterprise, we needed a scalable solution. Veritech
+                                    delivered beyond our expectations, providing us with a robust system that grows with
+                                    us."</p>
+                                <p class="fr">"En tant qu'entreprise en croissance, nous avions besoin d'une solution
+                                    évolutive. Veritech a dépassé nos attentes avec un système robuste qui évolue avec
+                                    nous."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Robert Kawende</h4>
+                                    <p class="en">CEO</p>
+                                    <p class="fr">PDG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">❝</div>
+                                <p class="en">"The transition to digital documentation was seamless with Veritech. Their
+                                    attention to detail and commitment to security gave us complete confidence."</p>
+                                <p class="fr">"La transition vers la documentation numérique a été parfaite avec
+                                    Veritech. Leur attention aux détails et leur engagement envers la sécurité nous ont
+                                    donné une confiance totale."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Claire Mutombo</h4>
+                                    <p class="en">CTO</p>
+                                    <p class="fr">Directrice Technique</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">❝</div>
+                                <p class="en">"Implementing Veritech's solutions resulted in a 40% reduction in
+                                    processing time and significant cost savings. Their local support team is
+                                    exceptional."</p>
+                                <p class="fr">"La mise en œuvre des solutions Veritech a entraîné une réduction de 40%
+                                    du temps de traitement et des économies significatives. Leur équipe de support
+                                    locale est exceptionnelle."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Pascal Lukamba</h4>
+                                    <p class="en">Operations Director</p>
+                                    <p class="fr">Directeur des Opérations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next testimonial">❯</button>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="jumpToSlide(0)"></span>
+                    <span class="dot" onclick="jumpToSlide(1)"></span>
+                    <span class="dot" onclick="jumpToSlide(2)"></span>
+                    <span class="dot" onclick="jumpToSlide(3)"></span>
+                    <span class="dot" onclick="jumpToSlide(4)"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+    </footer>
+</body>
+
+</html>

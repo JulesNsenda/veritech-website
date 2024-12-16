@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use cases - Veritech </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html" aria-label="Veritech Home">
+                <img src="../images/logo/logo-white-no-bg.png" alt="Veritech Logo - Digital Solutions Company">
+            </a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+        </button>
+        <div class="nav-wrapper" id="nav-menu">
+            <div class="mobile-nav-title">Veritech</div>
+            <nav>
+                <div class="dropdown">
+                    <a class="en dropdown-trigger">About Us <span class="dropdown-arrow">▼</span></a>
+                    <a class="fr dropdown-trigger">À Propos de Nous <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-content">
+                        <a href="our-company.html" class="en">Our Company</a>
+                        <a href="our-company.html" class="fr">Notre Entreprise</a>
+                        <a href="use-cases.html" class="en">Success Stories</a>
+                        <a href="use-cases.html" class="fr">Histoires de Réussite</a>
+                        <a href="faqs.html" class="en">FAQs</a>
+                        <a href="faqs.html" class="fr">FAQs</a>
+                    </div>
+                </div>
+                <a class="en" href="../index.html#services" onclick="closeMenu()">Our Services</a>
+                <a class="fr" href="../index.html#services" onclick="closeMenu()">Nos Services</a>
+                <a class="en" href="../index.html#why-choose-us" onclick="closeMenu()">Why Choose Us</a>
+                <a class="fr" href="../index.html#why-choose-us" onclick="closeMenu()">Pourquoi Nous</a>
+                <a class="en" href="../index.html#values" onclick="closeMenu()">Our Values</a>
+                <a class="fr" href="../index.html#values" onclick="closeMenu()">Nos Valeurs</a>
+                <a class="en" href="../index.html#contact" onclick="closeMenu()">Contact</a>
+                <a class="fr" href="../index.html#contact" onclick="closeMenu()">Contactez Nous</a>
+            </nav>
+            <div class="language-switcher">
+                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active"
+                    aria-label="Switch to French">FR</button>
+                <button id="en-toggle" onclick="toggleLanguage('en')" aria-label="Switch to English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Floating Home Button -->
+    <button id="home-button" onclick="scrollToTop()" title="Go to top">
+        <img src="../images/icons/home-icon.png" alt="Home" style="width: 24px; height: 24px;">
+    </button>
+
+    <main>
+        <section class="use-cases">
+            <div class="use-cases-header">
+                <h2 class="en">Success Stories</h2>
+                <h2 class="fr">Histoires de Réussite</h2>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="en">All Solutions</span>
+                        <span class="fr">Toutes les Solutions</span>
+                    </button>
+                    <button class="filter-btn" data-filter="digitization">
+                        <span class="en">Digitization</span>
+                        <span class="fr">Numérisation</span>
+                    </button>
+                    <button class="filter-btn" data-filter="workflow">
+                        <span class="en">Workflow</span>
+                        <span class="fr">Flux de Travail</span>
+                    </button>
+                    <button class="filter-btn" data-filter="integration">
+                        <span class="en">Integration</span>
+                        <span class="fr">Intégration</span>
+                    </button>
+                    <button class="filter-btn" data-filter="infrastructure">
+                        <span class="en">Infrastructure</span>
+                        <span class="fr">Infrastructure</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="use-cases-grid">
+                <!-- Case Study 1: Historic Archive -->
+                <div class="case-study enhanced" data-category="digitization">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag en">Government</span>
+                            <span class="solution-tag en">Document Digitization</span>
+                            <span class="industry-tag fr">Governement</span>
+                            <span class="solution-tag fr">Numérisation des Documents</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/historic-archive.jpg" alt="Archive Digitization Process">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">Historic Archive Digitization</h3>
+                        <h3 class="fr">Numérisation d'Archives Historiques</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">A government department needed to digitize millions of historical documents
+                                while ensuring searchability and preservation of critical records.</p>
+                            <p class="fr">Un département gouvernemental devait numériser des millions de documents
+                                historiques tout en assurant la recherche et la préservation des documents critiques.
+                            </p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Implemented comprehensive digitization with advanced OCR technology, enabling
+                                full-text search capabilities across the document repository.</p>
+                            <p class="fr">Mise en œuvre d'une numérisation complète avec technologie OCR avancée,
+                                permettant des capacités de recherche en texte intégral dans le référentiel de
+                                documents.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">95%</div>
+                                    <div class="metric-label en">Faster Retrieval</div>
+                                    <div class="metric-label fr">Récupération Plus Rapide</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label en">Searchable</div>
+                                    <div class="metric-label fr">Recherchable</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">1M+</div>
+                                    <div class="metric-label en">Documents</div>
+                                    <div class="metric-label fr">Documents</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1</span>
+                                <span class="en">Analysis</span>
+                                <span class="fr">Analyse</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 2-3</span>
+                                <span class="en">Setup</span>
+                                <span class="fr">Installation</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 4+</span>
+                                <span class="en">Rollout</span>
+                                <span class="fr">Déploiement</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Historic Archive Digitization">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Numérisation d'Archives Historiques">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Quality Verification -->
+                <div class="case-study enhanced" data-category="workflow">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag en">Logistics</span>
+                            <span class="solution-tag en">Quality Assurance</span>
+                            <span class="industry-tag fr">Logistiques</span>
+                            <span class="solution-tag fr">Assurance Qualité</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/quality-assurance.jpg" alt="Document Quality Verification System">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">Automated Document Quality Assurance</h3>
+                        <h3 class="fr">Assurance Qualité Automatisée des Documents</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">A major logistics company needed to verify and manage the quality of over
+                                100,000 documents daily while providing secure third-party access.</p>
+                            <p class="fr">Une grande entreprise de logistique devait vérifier et gérer la qualité de
+                                plus de 100 000 documents par jour tout en fournissant un accès sécurisé aux tiers.</p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Implemented a sophisticated Batch Authorization system with quality checks,
+                                secure view keys, and comprehensive audit trails.</p>
+                            <p class="fr">Mise en place d'un système sophistiqué d'autorisation par lots avec contrôles
+                                qualité, clés de visualisation sécurisées et pistes d'audit complètes.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">70%</div>
+                                    <div class="metric-label en">Processing Time Reduction</div>
+                                    <div class="metric-label fr">Réduction du Temps de Traitement</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">99.9%</div>
+                                    <div class="metric-label en">Quality Accuracy</div>
+                                    <div class="metric-label fr">Précision Qualité</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100K</div>
+                                    <div class="metric-label en">Daily Documents</div>
+                                    <div class="metric-label fr">Documents Quotidiens</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1-2</span>
+                                <span class="en">System Analysis</span>
+                                <span class="fr">Analyse du Système</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 3-4</span>
+                                <span class="en">Implementation</span>
+                                <span class="fr">Implémentation</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 5</span>
+                                <span class="en">Training & Launch</span>
+                                <span class="fr">Formation et Lancement</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Automated Document Quality Assurance">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Assurance Qualité Automatisée des Documents">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Medical Claims -->
+                <div class="case-study enhanced" data-category="workflow">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag en">Healthcare</span>
+                            <span class="solution-tag en">Workflow Automation</span>
+                            <span class="industry-tag fr">Système de santé</span>
+                            <span class="solution-tag fr">Automatisation des flux de travail</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/medical-claims.jpg" alt="Medical Claims Workflow">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">Automated Medical Claims Processing</h3>
+                        <h3 class="fr">Traitement Automatisé des Réclamations Médicales</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">A healthcare provider needed to automate the processing of 5,000+ daily
+                                medical claims received via email and integrate with their existing system.</p>
+                            <p class="fr">Un prestataire de soins de santé devait automatiser le traitement de plus de 5
+                                000 réclamations médicales quotidiennes reçues par email et s'intégrer à leur système
+                                existant.</p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Developed an automated email archiving and workflow system that captures,
+                                categorizes, and routes medical claims to appropriate processing queues.</p>
+                            <p class="fr">Développement d'un système automatisé d'archivage et de flux de travail des
+                                emails qui capture, catégorise et achemine les réclamations médicales vers les files
+                                d'attente de traitement appropriées.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">80%</div>
+                                    <div class="metric-label en">Faster Processing</div>
+                                    <div class="metric-label fr">Traitement Plus Rapide</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label en">Error Reduction</div>
+                                    <div class="metric-label fr">Réduction des Erreurs</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">5K+</div>
+                                    <div class="metric-label en">Daily Claims</div>
+                                    <div class="metric-label fr">Réclamations Quotidiennes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1</span>
+                                <span class="en">Email System Analysis</span>
+                                <span class="fr">Analyse du Système Email</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 2-3</span>
+                                <span class="en">Workflow Setup</span>
+                                <span class="fr">Configuration du Flux</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 4</span>
+                                <span class="en">Integration & Launch</span>
+                                <span class="fr">Intégration & Lancement</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Workflow Automation">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Automatisation des flux de travail">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case Study 4: HR Integration -->
+                <div class="case-study enhanced" data-category="integration">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag en">Recruitment</span>
+                            <span class="solution-tag en">System Integration</span>
+                            <span class="industry-tag fr">Recruitement</span>
+                            <span class="solution-tag fr">Integration des Systèmes</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/hr-document.jpg" alt="HR Systems Integration">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">Seamless HR Document Management</h3>
+                        <h3 class="fr">Gestion Transparente des Documents RH</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">A multinational recruitment firm needed to integrate candidate
+                                documents across their CRM and HR systems, handling 10,000+ applications monthly
+                                while ensuring a smooth candidate experience.</p>
+                            <p class="fr">Une société de recrutement multinationale devait intégrer les
+                                documents des candidats à travers leurs systèmes CRM et RH, gérant plus de 10
+                                000 candidatures mensuelles tout en assurant une expérience fluide aux
+                                candidats.</p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Developed an integrated document management solution that
+                                automatically captures and synchronizes candidate documents across multiple
+                                platforms, providing real-time access and updates.</p>
+                            <p class="fr">Développement d'une solution de gestion documentaire intégrée qui
+                                capture et synchronise automatiquement les documents des candidats sur plusieurs
+                                plateformes, offrant un accès et des mises à jour en temps réel.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">90%</div>
+                                    <div class="metric-label en">Reduced Processing Time</div>
+                                    <div class="metric-label fr">Temps de Traitement Réduit</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">85%</div>
+                                    <div class="metric-label en">Improved Experience</div>
+                                    <div class="metric-label fr">Expérience Améliorée</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">10K+</div>
+                                    <div class="metric-label en">Monthly Applications</div>
+                                    <div class="metric-label fr">Candidatures Mensuelles</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1-2</span>
+                                <span class="en">Integration Planning</span>
+                                <span class="fr">Planification de l'Intégration</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 3-5</span>
+                                <span class="en">Development</span>
+                                <span class="fr">Développement</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 6</span>
+                                <span class="en">Deployment</span>
+                                <span class="fr">Déploiement</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Systems Integration">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Integration des Systèmes">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 5: High Availability -->
+                <div class="case-study enhanced" data-category="infrastructure">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag en">Government</span>
+                            <span class="industry-tag fr">Governement</span>
+                            <span class="solution-tag">Infrastructure</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/high-availability.jpg" alt="High Availability Infrastructure">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">High Availability Document System</h3>
+                        <h3 class="fr">Système Documentaire Haute Disponibilité</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">A government agency required a highly available system for sensitive
+                                data management with minimal downtime and rapid disaster recovery capabilities.
+                            </p>
+                            <p class="fr">Une agence gouvernementale nécessitait un système hautement disponible
+                                pour la gestion des données sensibles avec un minimum d'interruption et des
+                                capacités de reprise rapide après sinistre.</p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Implemented a high-availability solution with real-time replication,
+                                automated failover, and rapid recovery protocols, maintaining continuous access
+                                to critical documents.</p>
+                            <p class="fr">Mise en œuvre d'une solution haute disponibilité avec réplication en
+                                temps réel, basculement automatique et protocoles de récupération rapide,
+                                maintenant un accès continu aux documents critiques.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">99.999%</div>
+                                    <div class="metric-label en">Uptime</div>
+                                    <div class="metric-label fr">Disponibilité</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">&lt;15min</div>
+                                    <div class="metric-label en">Recovery Time</div>
+                                    <div class="metric-label fr">Temps de Récupération</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">24/7</div>
+                                    <div class="metric-label en">Monitoring</div>
+                                    <div class="metric-label fr">Surveillance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1</span>
+                                <span class="en">Infrastructure Assessment</span>
+                                <span class="fr">Évaluation de l'Infrastructure</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 2-4</span>
+                                <span class="en">System Setup</span>
+                                <span class="fr">Configuration du Système</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 5</span>
+                                <span class="en">Testing & Launch</span>
+                                <span class="fr">Tests et Lancement</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Infrastructure">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Infrastructure">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 6: Document Generation -->
+                <div class="case-study enhanced" data-category="integration">
+                    <div class="case-study-header">
+                        <div class="tags">
+                            <span class="industry-tag">Enterprise</span>
+                            <span class="solution-tag en">Document Automation</span>
+                            <span class="solution-tag fr">Automation des Documents</span>
+                        </div>
+                        <div class="case-study-image">
+                            <img src="../images/view/document-generation.jpg" alt="Automated Document Generation">
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3 class="en">Real-Time Document Generation & Tracking</h3>
+                        <h3 class="fr">Génération et Suivi de Documents en Temps Réel</h3>
+
+                        <div class="challenge-section">
+                            <h4 class="en">Challenge</h4>
+                            <h4 class="fr">Défi</h4>
+                            <p class="en">Multiple corporations needed to automate the generation and delivery
+                                of business documents (invoices, POs, statements) while maintaining delivery
+                                tracking and verification.</p>
+                            <p class="fr">Plusieurs entreprises devaient automatiser la génération et la
+                                livraison de documents commerciaux (factures, bons de commande, relevés) tout en
+                                maintenant le suivi et la vérification des livraisons.</p>
+                        </div>
+
+                        <div class="solution-section">
+                            <h4 class="en">Our Solution</h4>
+                            <h4 class="fr">Notre Solution</h4>
+                            <p class="en">Developed a comprehensive reporting system that integrates with ERP
+                                systems, automates document generation, and provides real-time delivery tracking
+                                and verification.</p>
+                            <p class="fr">Développement d'un système de reporting complet qui s'intègre aux
+                                systèmes ERP, automatise la génération de documents et fournit un suivi et une
+                                vérification des livraisons en temps réel.</p>
+                        </div>
+
+                        <div class="results-section">
+                            <div class="key-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">95%</div>
+                                    <div class="metric-label en">Time Saved</div>
+                                    <div class="metric-label fr">Temps Économisé</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label en">Delivery Verification</div>
+                                    <div class="metric-label fr">Vérification de Livraison</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">50K+</div>
+                                    <div class="metric-label en">Monthly Documents</div>
+                                    <div class="metric-label fr">Documents Mensuels</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-footer">
+                        <div class="implementation-timeline">
+                            <div class="timeline-point">
+                                <span class="date">Week 1</span>
+                                <span class="en">Requirements Gathering</span>
+                                <span class="fr">Collecte des Besoins</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 2-3</span>
+                                <span class="en">Integration</span>
+                                <span class="fr">Intégration</span>
+                            </div>
+                            <div class="timeline-point">
+                                <span class="date">Week 4</span>
+                                <span class="en">Go-Live</span>
+                                <span class="fr">Mise en Service</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <button class="cta-button en" onclick="sendMail(this)"
+                                data-subject="Service Request - Document Automation">
+                                Request Similar Solution
+                            </button>
+                            <button class="cta-button fr" onclick="sendMail(this)"
+                                data-subject="Demande de service - Automation des Documents">
+                                Demander Une Solution Similaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+    </footer>
+</body>
+
+</html>

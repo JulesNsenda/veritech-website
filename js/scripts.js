@@ -360,3 +360,252 @@ if (document.readyState === 'loading') {
 } else {
     observeElements();
 }
+
+function toggleFaq(element) {
+    // Toggle active class on the clicked item
+    element.parentElement.classList.toggle('active');
+
+    // Close other open FAQs
+    const allFaqs = document.querySelectorAll('.faq-item');
+    allFaqs.forEach(faq => {
+        if (faq !== element.parentElement && faq.classList.contains('active')) {
+            faq.classList.remove('active');
+        }
+    });
+}
+
+// Enhanced dropdown menu for mobile
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const content = this.nextElementSibling;
+                const isVisible = content.style.display === 'block';
+
+                // Close all other dropdowns first
+                document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+
+                // Toggle current dropdown
+                content.style.display = isVisible ? 'none' : 'block';
+            }
+        });
+    });
+});
+
+// Add this to your scripts.js file
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('faqSearch');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const faqItems = document.querySelectorAll('.faq-item');
+    let activeCategory = 'all';
+
+    // Search functionality
+    function filterFAQs() {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question h4.en').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer p.en').textContent.toLowerCase();
+            const category = item.closest('.faq-category').getAttribute('data-category');
+
+            const matchesSearch = question.includes(searchTerm) || answer.includes(searchTerm);
+            const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+            if (matchesSearch && matchesCategory) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+
+        // Show/hide categories based on whether they have visible items
+        document.querySelectorAll('.faq-category').forEach(category => {
+            const hasVisibleItems = category.querySelectorAll('.faq-item:not(.hidden)').length > 0;
+            category.style.display = hasVisibleItems ? 'block' : 'none';
+        });
+    }
+
+    // Category filter functionality
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Update active category and filter
+            activeCategory = button.getAttribute('data-category');
+            filterFAQs();
+        });
+    });
+
+    // Search input event
+    searchInput.addEventListener('input', filterFAQs);
+
+    // Add data-category attributes to FAQ categories
+    document.querySelectorAll('.faq-category').forEach(category => {
+        const title = category.querySelector('h3.en').textContent.toLowerCase();
+        if (title.includes('infrastructure')) category.setAttribute('data-category', 'infrastructure');
+        else if (title.includes('document')) category.setAttribute('data-category', 'document-processing');
+        else if (title.includes('security')) category.setAttribute('data-category', 'security');
+        else if (title.includes('integration')) category.setAttribute('data-category', 'integration');
+        else if (title.includes('hardware')) category.setAttribute('data-category', 'hardware');
+        else if (title.includes('performance')) category.setAttribute('data-category', 'performance');
+        else if (title.includes('implementation')) category.setAttribute('data-category', 'implementation');
+    });
+});
+
+// Move these inside DOMContentLoaded
+let currentSlide = 0;
+
+function showSlide(n, slides, dots) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Handle circular rotation
+    currentSlide = n;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+
+    // Show current slide and dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function moveCarousel(direction) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    showSlide(currentSlide + direction, slides, dots);
+}
+
+function jumpToSlide(n) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    showSlide(n, slides, dots);
+}
+
+// Initialize carousel within DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    try {
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        if (!slides.length || !dots.length) {
+            console.warn('Carousel elements not found');
+            return;
+        }
+
+        // Initialize first slide
+        showSlide(0, slides, dots);
+
+        // Set up auto-advance
+        let autoAdvance = setInterval(() => moveCarousel(1), 5000);
+
+        // Add pause on hover
+        const carousel = document.querySelector('.testimonial-carousel');
+        if (carousel) {
+            // Pause on hover
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoAdvance);
+            });
+
+            // Resume on mouse leave
+            carousel.addEventListener('mouseleave', () => {
+                autoAdvance = setInterval(() => moveCarousel(1), 5000);
+            });
+
+            // Add touch support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50; // minimum distance for a swipe
+                const difference = touchStartX - touchEndX;
+
+                if (Math.abs(difference) > swipeThreshold) {
+                    if (difference > 0) {
+                        // Swiped left, show next slide
+                        moveCarousel(1);
+                    } else {
+                        // Swiped right, show previous slide
+                        moveCarousel(-1);
+                    }
+                }
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moveCarousel(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveCarousel(1);
+            }
+        });
+
+    } catch (error) {
+        console.error('Error initializing carousel:', error);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const caseStudies = document.querySelectorAll('.case-study');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+
+            caseStudies.forEach(study => {
+                if (filter === 'all' || study.dataset.category === filter) {
+                    study.style.display = 'block';
+                } else {
+                    study.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // CTA button functionality
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Scroll to contact form
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+
+function sendMail(button) {
+    try {
+        const subject = button.getAttribute('data-subject');
+        const email = "info@veritech-rdc.com"; 
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+        window.location.href = mailtoLink;
+    } catch (error) {
+        console.error("Error generating mailto link:", error);
+    }
+}

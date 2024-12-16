@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Veritech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#about-us" aria-label="Veritech Home">
+                <img src="../images/logo/logo-white-no-bg.png" alt="Veritech Logo - Digital Solutions Company">
+            </a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
+        </button>
+        <div class="nav-wrapper" id="nav-menu">
+            <div class="mobile-nav-title">Veritech</div>
+            <nav>
+                <div class="dropdown">
+                    <a class="en dropdown-trigger">About Us <span class="dropdown-arrow">▼</span></a>
+                    <a class="fr dropdown-trigger">À Propos de Nous <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-content">
+                        <a href="our-company.html" class="en">Our Company</a>
+                        <a href="our-company.html" class="fr">Notre Entreprise</a>
+                        <a href="use-cases.html" class="en">Success Stories</a>
+                        <a href="use-cases.html" class="fr">Histoires de Réussite</a>
+                        <a href="faqs.html" class="en">FAQs</a>
+                        <a href="faqs.html" class="fr">FAQs</a>
+                    </div>
+                </div>
+                <a class="en" href="../index.html#services" onclick="closeMenu()">Our Services</a>
+                <a class="fr" href="../index.html#service" onclick="closeMenu()">Nos Services</a>
+                <a class="en" href="../index.html#why-choose-us" onclick="closeMenu()">Why Choose Us</a>
+                <a class="fr" href="../index.html#why-choose-us" onclick="closeMenu()">Pourquoi Nous</a>
+                <a class="en" href="../index.html#values" onclick="closeMenu()">Our Values</a>
+                <a class="fr" href="../index.html#values" onclick="closeMenu()">Nos Valeurs</a>
+                <a class="en" href="../index.html#contact" onclick="closeMenu()">Contact</a>
+                <a class="fr" href="../index.html#contact" onclick="closeMenu()">Contactez Nous</a>
+            </nav>
+            <div class="language-switcher">
+                <button id="fr-toggle" onclick="toggleLanguage('fr')" class="active"
+                    aria-label="Switch to French">FR</button>
+                <button id="en-toggle" onclick="toggleLanguage('en')" aria-label="Switch to English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Floating Home Button -->
+    <button id="home-button" onclick="scrollToTop()" title="Go to top">
+        <img src="../images/icons/home-icon.png" alt="Home" style="width: 24px; height: 24px;">
+    </button>
+
+    <main>
+        <section class="faqs">
+            <div class="container">
+                <h2 class="en">Frequently Asked Questions</h2>
+                <h2 class="fr">Questions Fréquemment Posées</h2>
+
+                <div class="search-section">
+                    <div class="search-box">
+                        <input type="text" id="faqSearch" placeholder="Search FAQs..." class="search-input en">
+                        <input type="text" id="faqSearchFr" placeholder="Rechercher dans les FAQ..."
+                            class="search-input fr">
+                        <div class="category-filters">
+                            <div class="en">
+                                <button class="category-btn active" data-category="all">All Categories</button>
+                                <button class="category-btn" data-category="infrastructure">Infrastructure</button>
+                                <button class="category-btn" data-category="document-processing">Document
+                                    Processing</button>
+                                <button class="category-btn" data-category="security">Security</button>
+                                <button class="category-btn" data-category="integration">Integration</button>
+                                <button class="category-btn" data-category="hardware">Hardware</button>
+                                <button class="category-btn" data-category="performance">Performance</button>
+                                <button class="category-btn" data-category="implementation">Implementation</button>
+                            </div>
+                            <div class="fr">
+                                <button class="category-btn active" data-category="all">Toutes les Catégories</button>
+                                <button class="category-btn" data-category="infrastructure">Infrastructure</button>
+                                <button class="category-btn" data-category="document-processing">Traitement des
+                                    Documents</button>
+                                <button class="category-btn" data-category="security">Sécurité</button>
+                                <button class="category-btn" data-category="integration">Intégration</button>
+                                <button class="category-btn" data-category="hardware">Matériel</button>
+                                <button class="category-btn" data-category="performance">Performance</button>
+                                <button class="category-btn" data-category="implementation">Implémentation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-container">
+                    <!-- Infrastructure & Deployment -->
+                    <div class="faq-category">
+                        <h3 class="en">Infrastructure & Deployment</h3>
+                        <h3 class="fr">Infrastructure et Déploiement</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Is the software hosted or an on-premise installation?</h4>
+                                <h4 class="fr">Le logiciel est-il hébergé ou installé sur site?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We offer three deployment options: </p>
+                                <ul class="en">
+                                    <li><strong>Cloud-Hosted (SaaS):</strong> Fully managed solution hosted on Microsoft
+                                        Azure with 99.9% uptime guarantee</li>
+                                    <li><strong>On-Premise:</strong> Complete control over your infrastructure with full
+                                        software installation on your servers</li>
+                                    <li><strong>Hybrid:</strong> Combination of on-premise processing with cloud storage
+                                        and accessibility</li>
+                                </ul>
+                                <p class="en">Each option includes disaster recovery planning and business continuity
+                                    measures.</p>
+                                <p class="fr">Nous proposons trois options de déploiement :
+                                <ul class="fr">
+                                    <li><strong>Cloud-Hébergé (SaaS) :</strong> Solution entièrement gérée hébergée sur
+                                        Microsoft Azure avec une garantie de disponibilité de 99,9%</li>
+                                    <li><strong>Sur Site :</strong> Contrôle complet de votre infrastructure avec
+                                        installation complète du logiciel sur vos serveurs</li>
+                                    <li><strong>Hybride :</strong> Combinaison du traitement sur site avec stockage et
+                                        accessibilité dans le cloud</li>
+                                </ul>
+                                <p class="fr"> Chaque option comprend un plan de reprise après sinistre et des mesures
+                                    de continuité</p>
+                                d'activité.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How much disk space does it require?</h4>
+                                <h4 class="fr">Quel espace disque est nécessaire?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Space requirements vary based on your usage:</p>
+                                <ul class="en">
+                                    <li><strong>Base Installation:</strong> 500MB for application files</li>
+                                    <li><strong>Database:</strong> Initial 1GB, scales with document volume</li>
+                                    <li><strong>Document Storage:</strong> Plan for:
+                                        <ul>
+                                            <li>A4 document: ~100KB per page (200 DPI)</li>
+                                            <li>High-resolution color: ~500KB per page (300 DPI)</li>
+                                            <li>Searchable PDF with OCR: Additional 30-50KB per page</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Recommended:</strong> Minimum 100GB initial allocation with scalability
+                                        plan</li>
+                                </ul>
+                                <p class="en">Storage compression and archiving features are available to optimize space
+                                    usage. </p>
+                                <p class="fr">Les besoins en espace varient selon votre utilisation :</p>
+                                <ul class="fr">
+                                    <li><strong>Installation de Base :</strong> 500MB pour les fichiers d'application
+                                    </li>
+                                    <li><strong>Base de Données :</strong> 1GB initial, évolutif selon le volume de
+                                        documents</li>
+                                    <li><strong>Stockage de Documents :</strong> Prévoir :
+                                        <ul>
+                                            <li>Document A4 : ~100KB par page (200 DPI)</li>
+                                            <li>Couleur haute résolution : ~500KB par page (300 DPI)</li>
+                                            <li>PDF recherchable avec OCR : 30-50KB supplémentaires par page</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Recommandé :</strong> Allocation initiale minimale de 100GB avec plan
+                                        d'évolutivité</li>
+                                </ul>
+                                <p class="fr"> Des fonctionnalités de compression et d'archivage sont disponibles pour
+                                    optimiser l'utilisation de l'espace.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">If on premise, what server specs are required?</h4>
+                                <h4 class="fr">Pour une installation sur site, quelles sont les spécifications serveur
+                                    requises?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Server requirements scale based on user load and document volume: </p>
+                                <ul class="en">
+                                    <li><strong>Small Deployment</strong> (Up to 50 users):
+                                        <ul>
+                                            <li>Windows Server 2016/2019/2022 ou Linux (Debian 12, CentOS 8.5, RHEL
+                                                8.10)</li>
+                                            <li>4 CPU cores (Intel Xeon or equivalent)</li>
+                                            <li>16GB RAM</li>
+                                            <li>100GB SSD for application</li>
+                                            <li>RAID 10 configuration recommended for document storage</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Medium Deployment</strong> (50-200 users):
+                                        <ul>
+                                            <li>8 CPU cores</li>
+                                            <li>32GB RAM</li>
+                                            <li>Dedicated SQL Server</li>
+                                            <li>High-performance SSD storage</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Large Deployment</strong> (200+ users):
+                                        <ul>
+                                            <li>16+ CPU cores</li>
+                                            <li>64GB+ RAM</li>
+                                            <li>Clustered environment</li>
+                                            <li>Enterprise-grade storage solution</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Les exigences serveur varient selon la charge utilisateur et le volume de
+                                    documents : </p>
+
+                                <ul class="fr">
+                                    <li><strong>Petit Déploiement</strong> (Jusqu'à 50 utilisateurs) :
+                                        <ul>
+                                            <li>Windows Server 2016/2019/2022 ou Linux (Debian 12, CentOS 8.5, RHEL
+                                                8.10)</li>
+                                            <li>4 cœurs CPU (Intel Xeon ou équivalent)</li>
+                                            <li>16GB RAM</li>
+                                            <li>100GB SSD pour l'application</li>
+                                            <li>Configuration RAID 10 recommandée pour le stockage des documents</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Déploiement Moyen</strong> (50-200 utilisateurs) :
+                                        <ul>
+                                            <li>8 cœurs CPU</li>
+                                            <li>32GB RAM</li>
+                                            <li>Serveur SQL dédié</li>
+                                            <li>Stockage SSD haute performance</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Grand Déploiement</strong> (200+ utilisateurs) :
+                                        <ul>
+                                            <li>16+ cœurs CPU</li>
+                                            <li>64GB+ RAM</li>
+                                            <li>Environnement en cluster</li>
+                                            <li>Solution de stockage niveau entreprise</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Document Processing & OCR -->
+                    <div class="faq-category">
+                        <h3 class="en">Document Processing & OCR Capabilities</h3>
+                        <h3 class="fr">Traitement des Documents et Capacités OCR</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Does the software support OCR?</h4>
+                                <h4 class="fr">Le logiciel prend-il en charge l'OCR?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Yes, we provide advanced OCR capabilities:</p>
+                                <ul class="en">
+                                    <li><strong>OCR Engine:</strong>
+                                        <ul>
+                                            <li>Nuance PDF</li>
+                                            <li>Google Vision</li>
+                                            <li>Amazon Textract</li>
+                                            <li>200+ languages supported</li>
+                                            <li>Handwriting recognition capabilities</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Features:</strong>
+                                        <ul>
+                                            <li>Full-text searchable PDF generation</li>
+                                            <li>Zonal OCR for specific data extraction</li>
+                                            <li>Table structure recognition</li>
+                                            <li>Automated form field extraction</li>
+                                            <li>Machine learning-enhanced accuracy</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Accuracy Rates:</strong>
+                                        <ul>
+                                            <li>99%+ for typed text</li>
+                                            <li>95%+ for printed forms</li>
+                                            <li>90%+ for handwritten numerals</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Oui, nous fournissons des capacités OCR avancées :</p>
+                                <ul class="fr">
+                                    <li><strong>Moteur OCR :</strong>
+                                        <ul>
+                                            <li>Nuance PDF</li>
+                                            <li>Google Vision</li>
+                                            <li>Amazon Textract</li>
+                                            <li>Plus de 200 langues prises en charge</li>
+                                            <li>Capacités de reconnaissance d'écriture manuscrite</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fonctionnalités :</strong>
+                                        <ul>
+                                            <li>Génération de PDF avec texte intégral recherchable</li>
+                                            <li>OCR par zone pour l'extraction de données spécifiques</li>
+                                            <li>Reconnaissance de la structure des tableaux</li>
+                                            <li>Extraction automatisée des champs de formulaire</li>
+                                            <li>Précision améliorée par apprentissage automatique</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Taux de Précision :</strong>
+                                        <ul>
+                                            <li>99%+ pour le texte dactylographié</li>
+                                            <li>95%+ pour les formulaires imprimés</li>
+                                            <li>90%+ pour les chiffres manuscrits</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What batch types do you support?</h4>
+                                <h4 class="fr">Quels types de lots prenez-vous en charge?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We support multiple batch types and processing methods:</p>
+                                <ul class="en">
+                                    <li><strong>Document Types:</strong>
+                                        <ul>
+                                            <li>Invoices and purchase orders</li>
+                                            <li>HR documents and contracts</li>
+                                            <li>Medical records and prescriptions</li>
+                                            <li>Legal documents and case files</li>
+                                            <li>Financial statements and reports</li>
+                                            <li>Custom document types</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Batch Processing Features:</strong>
+                                        <ul>
+                                            <li>Barcode separation</li>
+                                            <li>Blank page detection</li>
+                                            <li>Multi-stream scanning</li>
+                                            <li>Automated classification</li>
+                                            <li>Custom batch naming conventions</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Processing Methods:</strong>
+                                        <ul>
+                                            <li>Hot folder monitoring</li>
+                                            <li>Scheduled batch processing</li>
+                                            <li>Manual batch creation</li>
+                                            <li>API-driven processing</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous prenons en charge plusieurs types de lots et méthodes de traitement :
+                                </p>
+                                <ul class="fr">
+                                    <li><strong>Types de Documents :</strong>
+                                        <ul>
+                                            <li>Factures et bons de commande</li>
+                                            <li>Documents RH et contrats</li>
+                                            <li>Dossiers médicaux et ordonnances</li>
+                                            <li>Documents juridiques et dossiers</li>
+                                            <li>États financiers et rapports</li>
+                                            <li>Types de documents personnalisés</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fonctionnalités de Traitement par Lot :</strong>
+                                        <ul>
+                                            <li>Séparation par code-barres</li>
+                                            <li>Détection des pages blanches</li>
+                                            <li>Numérisation multi-flux</li>
+                                            <li>Classification automatisée</li>
+                                            <li>Conventions de nommage personnalisées</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Méthodes de Traitement :</strong>
+                                        <ul>
+                                            <li>Surveillance des dossiers actifs</li>
+                                            <li>Traitement par lot programmé</li>
+                                            <li>Création manuelle de lots</li>
+                                            <li>Traitement piloté par API</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What DPI do you scan in?</h4>
+                                <h4 class="fr">En quelle résolution (DPI) numérisez-vous?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We support various DPI settings optimized for different document types:
+                                </p>
+                                <ul class="en">
+                                    <li><strong>Standard Documents:</strong>
+                                        <ul>
+                                            <li>200 DPI - Default for most documents</li>
+                                            <li>300 DPI - For OCR and archival</li>
+                                            <li>400 DPI - For small text documents</li>
+                                            <li>600 DPI - For detailed graphics</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Optimization Features:</strong>
+                                        <ul>
+                                            <li>Automatic DPI detection</li>
+                                            <li>Dynamic compression</li>
+                                            <li>Quality-based optimization</li>
+                                            <li>Storage-friendly formats</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Recommended Settings:</strong>
+                                        <ul>
+                                            <li>Text documents: 200-300 DPI</li>
+                                            <li>Forms: 300 DPI</li>
+                                            <li>Photos: 300-600 DPI</li>
+                                            <li>Barcode documents: 200 DPI</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous prenons en charge différents paramètres DPI optimisés pour différents
+                                    types de documents :</p>
+                                <ul class="fr">
+                                    <li><strong>Documents Standard :</strong>
+                                        <ul>
+                                            <li>200 DPI - Par défaut pour la plupart des documents</li>
+                                            <li>300 DPI - Pour l'OCR et l'archivage</li>
+                                            <li>400 DPI - Pour les documents à petit texte</li>
+                                            <li>600 DPI - Pour les graphiques détaillés</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fonctionnalités d'Optimisation :</strong>
+                                        <ul>
+                                            <li>Détection automatique du DPI</li>
+                                            <li>Compression dynamique</li>
+                                            <li>Optimisation basée sur la qualité</li>
+                                            <li>Formats optimisés pour le stockage</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Paramètres Recommandés :</strong>
+                                        <ul>
+                                            <li>Documents texte : 200-300 DPI</li>
+                                            <li>Formulaires : 300 DPI</li>
+                                            <li>Photos : 300-600 DPI</li>
+                                            <li>Documents avec codes-barres : 200 DPI</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Security & Compliance Section -->
+                    <div class="faq-category">
+                        <h3 class="en">Security & Compliance</h3>
+                        <h3 class="fr">Sécurité et Conformité</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Are the documents SARS compliant?</h4>
+                                <h4 class="fr">Les documents sont-ils conformes aux normes DGI?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Yes, our system is fully SARS compliant:</p>
+                                <ul class="en">
+                                    <li><strong>Document Requirements:</strong>
+                                        <ul>
+                                            <li>Meets SARS electronic record-keeping requirements</li>
+                                            <li>Compliant with Section 16(2) of VAT Act 89 of 1991</li>
+                                            <li>Supports required 5-year retention period</li>
+                                            <li>Maintains document integrity and audit trails</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Storage Compliance:</strong>
+                                        <ul>
+                                            <li>Secure, unalterable document storage</li>
+                                            <li>Digital signatures for authenticity</li>
+                                            <li>Complete audit logging of all access and changes</li>
+                                            <li>Tamper-evident storage mechanisms</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Access Controls:</strong>
+                                        <ul>
+                                            <li>Role-based access control (RBAC)</li>
+                                            <li>Detailed access logging</li>
+                                            <li>Secure retrieval mechanisms</li>
+                                            <li>Compliant backup procedures</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Oui, notre système est entièrement conforme aux normes DGI : </p>
+                                <ul class="fr">
+                                    <li><strong>Exigences Documentaires :</strong>
+                                        <ul>
+                                            <li>Répond aux exigences de la DGI en matière de tenue de registres
+                                                électroniques</li>
+                                            <li>Conforme aux Articles 11 et 12 du Code de la TVA (Ordonnance-loi n°
+                                                10/001 du 20 août 2010)</li>
+                                            <li>Assure la période de conservation obligatoire de 10 ans conformément aux
+                                                lois fiscales congolaises</li>
+                                            <li>Maintient l'intégrité des documents et les pistes d'audit conformément
+                                                aux normes de la DGI</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Conformité du Stockage :</strong>
+                                        <ul>
+                                            <li>Stockage sécurisé et inaltérable des documents</li>
+                                            <li>Signatures numériques pour l'authenticité</li>
+                                            <li>Journalisation complète des accès et modifications</li>
+                                            <li>Mécanismes de stockage inviolables</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Contrôles d'Accès :</strong>
+                                        <ul>
+                                            <li>Contrôle d'accès basé sur les rôles (RBAC)</li>
+                                            <li>Journalisation détaillée des accès</li>
+                                            <li>Mécanismes sécurisés de récupération</li>
+                                            <li>Procédures de sauvegarde conformes</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How is the software backed up?</h4>
+                                <h4 class="fr">Comment le logiciel est-il sauvegardé?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We implement comprehensive backup strategies: </p>
+                                <ul class="en">
+                                    <li><strong>Backup Types:</strong>
+                                        <ul>
+                                            <li>Real-time replication for critical data</li>
+                                            <li>Daily incremental backups</li>
+                                            <li>Weekly full backups</li>
+                                            <li>Monthly archival backups</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Storage Locations:</strong>
+                                        <ul>
+                                            <li>Primary on-site backup</li>
+                                            <li>Off-site disaster recovery</li>
+                                            <li>Cloud backup (optional)</li>
+                                            <li>Geo-redundant storage for cloud deployments</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Security Measures:</strong>
+                                        <ul>
+                                            <li>AES-256 encryption for backup data</li>
+                                            <li>Secure transport protocols</li>
+                                            <li>Access-controlled backup repositories</li>
+                                            <li>Regular backup verification and testing</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Recovery Capabilities:</strong>
+                                        <ul>
+                                            <li>Point-in-time recovery</li>
+                                            <li>Individual document restoration</li>
+                                            <li>Complete system recovery</li>
+                                            <li>15-minute RPO (Recovery Point Objective)</li>
+                                            <li>4-hour RTO (Recovery Time Objective)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous mettons en œuvre des stratégies de sauvegarde complètes : </p>
+                                <ul class="fr">
+                                    <li><strong>Types de Sauvegarde :</strong>
+                                        <ul>
+                                            <li>Réplication en temps réel pour les données critiques</li>
+                                            <li>Sauvegardes incrémentales quotidiennes</li>
+                                            <li>Sauvegardes complètes hebdomadaires</li>
+                                            <li>Sauvegardes d'archivage mensuelles</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Emplacements de Stockage :</strong>
+                                        <ul>
+                                            <li>Sauvegarde principale sur site</li>
+                                            <li>Reprise après sinistre hors site</li>
+                                            <li>Sauvegarde cloud (optionnelle)</li>
+                                            <li>Stockage géo-redondant pour les déploiements cloud</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Mesures de Sécurité :</strong>
+                                        <ul>
+                                            <li>Chiffrement AES-256 pour les données de sauvegarde</li>
+                                            <li>Protocoles de transport sécurisés</li>
+                                            <li>Dépôts de sauvegarde à accès contrôlé</li>
+                                            <li>Vérification et tests réguliers des sauvegardes</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Capacités de Récupération :</strong>
+                                        <ul>
+                                            <li>Récupération à un point dans le temps</li>
+                                            <li>Restauration de documents individuels</li>
+                                            <li>Récupération complète du système</li>
+                                            <li>RPO de 15 minutes (Objectif de Point de Récupération)</li>
+                                            <li>RTO de 4 heures (Objectif de Temps de Récupération)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What security measures are in place?</h4>
+                                <h4 class="fr">Quelles mesures de sécurité sont en place?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Our system incorporates multi-layered security:</p>
+                                <ul class="en">
+                                    <li><strong>Authentication:</strong>
+                                        <ul>
+                                            <li>Multi-factor authentication (MFA)</li>
+                                            <li>Active Directory/LDAP integration</li>
+                                            <li>Single Sign-On (SSO) support</li>
+                                            <li>Password policy enforcement</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Data Security:</strong>
+                                        <ul>
+                                            <li>AES-256 encryption at rest</li>
+                                            <li>TLS 1.3 encryption in transit</li>
+                                            <li>Digital signatures for documents</li>
+                                            <li>Secure key management</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Access Control:</strong>
+                                        <ul>
+                                            <li>Role-based access control (RBAC)</li>
+                                            <li>Document-level permissions</li>
+                                            <li>Session management</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Monitoring & Auditing:</strong>
+                                        <ul>
+                                            <li>Real-time security monitoring</li>
+                                            <li>Comprehensive audit trails</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Compliance:</strong>
+                                        <ul>
+                                            <li>GDPR readiness</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Notre système intègre une sécurité multicouche :</p>
+                                <ul class="fr">
+                                    <li><strong>Authentification :</strong>
+                                        <ul>
+                                            <li>Authentification multifactorielle (MFA)</li>
+                                            <li>Intégration Active Directory/LDAP</li>
+                                            <li>Support de l'authentification unique (SSO)</li>
+                                            <li>Application de politique de mots de passe</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Sécurité des Données :</strong>
+                                        <ul>
+                                            <li>Chiffrement AES-256 au repos</li>
+                                            <li>Chiffrement TLS 1.3 en transit</li>
+                                            <li>Signatures numériques pour les documents</li>
+                                            <li>Gestion sécurisée des clés</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Contrôle d'Accès :</strong>
+                                        <ul>
+                                            <li>Contrôle d'accès basé sur les rôles (RBAC)</li>
+                                            <li>Permissions au niveau document</li>
+                                            <li>Gestion des sessions</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Surveillance et Audit :</strong>
+                                        <ul>
+                                            <li>Surveillance de sécurité en temps réel</li>
+                                            <li>Pistes d'audit complètes</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Conformité :</strong>
+                                        <ul>
+                                            <li>Conformité RGPD</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Integration & APIs Section -->
+                    <div class="faq-category">
+                        <h3 class="en">Integration & APIs</h3>
+                        <h3 class="fr">Intégration et APIs</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What integration capabilities are available?</h4>
+                                <h4 class="fr">Quelles sont les capacités d'intégration disponibles?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We offer comprehensive integration options:</p>
+                                <ul class="en">
+                                    <li><strong>API Technologies:</strong>
+                                        <ul>
+                                            <li>RESTful APIs</li>
+                                            <li>SOAP Web Services</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Integration Methods:</strong>
+                                        <ul>
+                                            <li>Direct database connectivity (where applicable)</li>
+                                            <li>File system monitoring</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Authentication Options:</strong>
+                                        <ul>
+                                            <li>OAuth 2.0 / OpenID Connect</li>
+                                            <li>API key authentication</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous proposons des options d'intégration complètes : </p>
+                                <ul class="fr">
+                                    <li><strong>Technologies API :</strong>
+                                        <ul>
+                                            <li>APIs RESTful</li>
+                                            <li>Services Web SOAP</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Méthodes d'Intégration :</strong>
+                                        <ul>
+                                            <li>Connectivité directe à la base de données (si applicable)</li>
+                                            <li>Surveillance du système de fichiers</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Options d'Authentification :</strong>
+                                        <ul>
+                                            <li>OAuth 2.0 / OpenID Connect</li>
+                                            <li>Authentification par clé API</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Which ERP systems can you integrate with?</h4>
+                                <h4 class="fr">Avec quels systèmes ERP pouvez-vous vous intégrer?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We support integration with major ERP systems: </p>
+                                <ul class="en">
+                                    <li><strong>SAP Integration:</strong>
+                                        <ul>
+                                            <li>SAP via middleware</li>
+                                            <li>SAP Business One direct integration</li>
+                                            <li>Support for SAP ArchiveLink</li>
+                                            <li>SAP IDoc interface support</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Microsoft Dynamics:</strong>
+                                        <ul>
+                                            <li>Dynamics 365 Business Central</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Other ERP Systems:</strong>
+                                        <ul>
+                                            <li>Sage</li>
+                                            <li>Embrace</li>
+                                            <li>Acumatica</li>
+                                            <li>Workday</li>
+                                            <li>Custom ERP solutions</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous prenons en charge l'intégration avec les principaux systèmes ERP :
+                                </p>
+                                <ul class="fr">
+                                    <li><strong>Intégration SAP :</strong>
+                                        <ul>
+                                            <li>SAP via middleware</li>
+                                            <li>Intégration directe avec SAP Business One</li>
+                                            <li>Support pour SAP ArchiveLink</li>
+                                            <li>Support de l'interface SAP IDoc</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Microsoft Dynamics :</strong>
+                                        <ul>
+                                            <li>Dynamics 365 Business Central</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Autres Systèmes ERP :</strong>
+                                        <ul>
+                                            <li>Sage</li>
+                                            <li>Embrace</li>
+                                            <li>Acumatica</li>
+                                            <li>Workday</li>
+                                            <li>Solutions ERP personnalisées</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What additional systems can you integrate with?</h4>
+                                <h4 class="fr">Avec quels autres systèmes pouvez-vous vous intégrer?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We support various business systems:</p>
+                                <ul class="en">
+                                    <li><strong>CRM Systems:</strong>
+                                        <ul>
+                                            <li>Salesforce</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>HR Systems:</strong>
+                                        <ul>
+                                            <li>Workday</li>
+                                            <li>Local HR systems</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Logistics & Supply Chain:</strong>
+                                        <ul>
+                                            <li>Freightware</li>
+                                            <li>Shipping systems</li>
+                                            <li>Custom logistics solutions</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous prenons en charge divers systèmes d'entreprise :</p>
+                                <ul class="fr">
+                                    <li><strong>Systèmes CRM :</strong>
+                                        <ul>
+                                            <li>Salesforce</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Systèmes RH :</strong>
+                                        <ul>
+                                            <li>Workday</li>
+                                            <li>Systèmes RH locaux</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Logistique et Chaîne d'Approvisionnement :</strong>
+                                        <ul>
+                                            <li>Freightware</li>
+                                            <li>Systèmes d'expédition</li>
+                                            <li>Solutions logistiques personnalisées</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How are integrations implemented and supported?</h4>
+                                <h4 class="fr">Comment les intégrations sont-elles mises en œuvre et prises en charge?
+                                </h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We provide comprehensive integration support:</p>
+                                <ul class="en">
+                                    <li><strong>Implementation Process:</strong>
+                                        <ul>
+                                            <li>Requirements analysis</li>
+                                            <li>Integration design workshop</li>
+                                            <li>Development and testing phase</li>
+                                            <li>Performance optimization</li>
+                                            <li>Production deployment</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Monitoring & Support:</strong>
+                                        <ul>
+                                            <li>24/7 integration monitoring</li>
+                                            <li>Error logging and tracking</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Documentation:</strong>
+                                        <ul>
+                                            <li>API documentation</li>
+                                            <li>Integration guides</li>
+                                            <li>Troubleshooting guides</li>
+                                            <li>Best practices</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous fournissons un support d'intégration complet :</p>
+                                <ul class="fr">
+                                    <li><strong>Processus de Mise en Œuvre :</strong>
+                                        <ul>
+                                            <li>Analyse des besoins</li>
+                                            <li>Atelier de conception d'intégration</li>
+                                            <li>Phase de développement et de test</li>
+                                            <li>Optimisation des performances</li>
+                                            <li>Déploiement en production</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Surveillance et Support :</strong>
+                                        <ul>
+                                            <li>Surveillance des intégrations 24/7</li>
+                                            <li>Journalisation et suivi des erreurs</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Documentation :</strong>
+                                        <ul>
+                                            <li>Documentation API</li>
+                                            <li>Guides d'intégration</li>
+                                            <li>Guides de dépannage</li>
+                                            <li>Meilleures pratiques</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hardware Compatibility Section -->
+                    <div class="faq-category">
+                        <h3 class="en">Hardware Compatibility</h3>
+                        <h3 class="fr">Compatibilité Matérielle</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What scanner do you recommend?</h4>
+                                <h4 class="fr">Quel scanner recommandez-vous?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We recommend scanners based on volume and use case:</p>
+                                <ul class="en">
+                                    <li><strong>High-Volume Production (100,000+ pages/month):</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7900</li>
+                                            <li>Kodak Alaris S3000 Series</li>
+                                            <li>Canon DR-G2140</li>
+                                            <li>Speed: 100-140 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Medium-Volume (25,000-100,000 pages/month):</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7700</li>
+                                            <li>Kodak S2085f</li>
+                                            <li>Canon DR-M260</li>
+                                            <li>Speed: 60-85 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Departmental Use (5,000-25,000 pages/month):</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7160</li>
+                                            <li>Kodak S2050</li>
+                                            <li>Canon DR-M160II</li>
+                                            <li>Speed: 40-60 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Desktop/Small Office (up to 5,000 pages/month):</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-800R</li>
+                                            <li>Kodak S2040</li>
+                                            <li>Canon DR-C230</li>
+                                            <li>Speed: 30-40 ppm</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous recommandons des scanners en fonction du volume et du cas
+                                    d'utilisation :</p>
+                                <ul class="fr">
+                                    <li><strong>Production à haut volume (100 000+ pages/mois) :</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7900</li>
+                                            <li>Kodak Alaris S3000 Series</li>
+                                            <li>Canon DR-G2140</li>
+                                            <li>Vitesse : 100-140 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Volume moyen (25 000-100 000 pages/mois) :</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7700</li>
+                                            <li>Kodak S2085f</li>
+                                            <li>Canon DR-M260</li>
+                                            <li>Vitesse : 60-85 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Utilisation départementale (5 000-25 000 pages/mois) :</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-7160</li>
+                                            <li>Kodak S2050</li>
+                                            <li>Canon DR-M160II</li>
+                                            <li>Vitesse : 40-60 ppm</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Bureau de petite taille (jusqu'à 5 000 pages/mois) :</strong>
+                                        <ul>
+                                            <li>Fujitsu fi-800R</li>
+                                            <li>Kodak S2040</li>
+                                            <li>Canon DR-C230</li>
+                                            <li>Vitesse : 30-40 ppm</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Will it work with my MFP (Multi-Function Printer)?</h4>
+                                <h4 class="fr">Fonctionnera-t-il avec mon imprimante multifonction?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Yes, we support various MFP integration methods: </p>
+                                <ul class="en">
+                                    <li><strong>Integration Methods:</strong>
+                                        <ul>
+                                            <li>Direct TWAIN scanning</li>
+                                            <li>Network folder monitoring</li>
+                                            <li>Email capture</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Supported Features:</strong>
+                                        <ul>
+                                            <li>User authentication</li>
+                                            <li>Metadata capture</li>
+                                            <li>OCR processing</li>
+                                            <li>Direct document routing</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Oui, nous prenons en charge diverses méthodes d'intégration pour
+                                    imprimantes multifonctions :</p>
+                                <ul class="fr">
+                                    <li><strong>Méthodes d'intégration :</strong>
+                                        <ul>
+                                            <li>Numérisation directe TWAIN</li>
+                                            <li>Surveillance des dossiers réseau</li>
+                                            <li>Capture d'e-mails</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fonctionnalités prises en charge :</strong>
+                                        <ul>
+                                            <li>Authentification utilisateur</li>
+                                            <li>Capture de métadonnées</li>
+                                            <li>Traitement OCR</li>
+                                            <li>Routage direct des documents</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Will it work with my scanners?</h4>
+                                <h4 class="fr">Fonctionnera-t-il avec mes scanners?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Our software supports a wide range of scanning devices:</p>
+                                <ul class="en">
+                                    <li><strong>Driver Support:</strong>
+                                        <ul>
+                                            <li>TWAIN 32 compliant devices</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Advanced Features:</strong>
+                                        <ul>
+                                            <li>Automatic page size detection</li>
+                                            <li>Color detection</li>
+                                            <li>Blank page removal</li>
+                                            <li>Image enhancement</li>
+                                            <li>Background smoothing</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Notre logiciel prend en charge une large gamme de périphériques de
+                                    numérisation :</p>
+                                <ul class="fr">
+                                    <li><strong>Prise en charge des pilotes :</strong>
+                                        <ul>
+                                            <li>Appareils compatibles TWAIN 32</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fonctionnalités avancées :</strong>
+                                        <ul>
+                                            <li>Détection automatique de la taille des pages</li>
+                                            <li>Détection des couleurs</li>
+                                            <li>Suppression des pages blanches</li>
+                                            <li>Amélioration des images</li>
+                                            <li>Lissage de l'arrière-plan</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Performance & Scalability Section -->
+                    <div class="faq-category">
+                        <h3 class="en">Performance & Scalability</h3>
+                        <h3 class="fr">Performance et Évolutivité</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What are the system performance capabilities?</h4>
+                                <h4 class="fr">Quelles sont les capacités de performance du système?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Our system is designed for enterprise-level performance:</p>
+                                <ul class="en">
+                                    <li><strong>Processing Capacity:</strong>
+                                        <ul>
+                                            <li>Document ingestion: Up to 1 million pages per day</li>
+                                            <li>Concurrent users: 1,000+ simultaneous connections</li>
+                                            <li>OCR processing: 100,000+ pages per hour</li>
+                                            <li>Search response time: < 3 seconds for complex queries</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Storage Performance:</strong>
+                                        <ul>
+                                            <li>Document retrieval: < 2 seconds</li>
+                                            <li>Batch processing: 500+ pages per minute</li>
+                                            <li>Database optimization: Automatic indexing</li>
+                                            <li>Cache hit ratio: > 95%</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>System Responsiveness:</strong>
+                                        <ul>
+                                            <li>UI response time: < 1 second</li>
+                                            <li>API response time: < 200ms</li>
+                                            <li>Report generation: Real-time</li>
+                                            <li>Document preview: < 2 seconds</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Notre système est conçu pour des performances de niveau entreprise :</p>
+                                <ul class="fr">
+                                    <li><strong>Capacité de traitement :</strong>
+                                        <ul>
+                                            <li>Ingestion de documents : Jusqu'à 1 million de pages par jour</li>
+                                            <li>Utilisateurs simultanés : Plus de 1 000 connexions simultanées</li>
+                                            <li>Traitement OCR : Plus de 100 000 pages par heure</li>
+                                            <li>Temps de réponse pour les recherches : Moins de 3 secondes pour les
+                                                requêtes complexes</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Performance de stockage :</strong>
+                                        <ul>
+                                            <li>Récupération de documents : Moins de 2 secondes</li>
+                                            <li>Traitement par lots : Plus de 500 pages par minute</li>
+                                            <li>Optimisation de base de données : Indexation automatique</li>
+                                            <li>Taux de cache hit : Plus de 95 %</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Réactivité du système :</strong>
+                                        <ul>
+                                            <li>Temps de réponse de l'interface utilisateur : Moins de 1 seconde</li>
+                                            <li>Temps de réponse de l'API : Moins de 200 ms</li>
+                                            <li>Génération de rapports : En temps réel</li>
+                                            <li>Aperçu des documents : Moins de 2 secondes</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How does the system scale?</h4>
+                                <h4 class="fr">Comment le système évolue-t-il?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">The system offers multiple scaling options:</p>
+                                <ul class="en">
+                                    <li><strong>Vertical Scaling:</strong>
+                                        <ul>
+                                            <li>CPU core expansion support</li>
+                                            <li>Memory capacity increase</li>
+                                            <li>Storage expansion capabilities</li>
+                                            <li>Database optimization tools</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Horizontal Scaling:</strong>
+                                        <ul>
+                                            <li>Load balancing across multiple servers</li>
+                                            <li>Distributed processing capabilities</li>
+                                            <li>Multi-site replication</li>
+                                            <li>Cloud burst support</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Architecture Features:</strong>
+                                        <ul>
+                                            <li>Microservices architecture</li>
+                                            <li>Container support (Docker)</li>
+                                            <li>Kubernetes orchestration</li>
+                                            <li>Auto-scaling capabilities</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Le système propose plusieurs options d'évolutivité :</p>
+                                <ul class="fr">
+                                    <li><strong>Évolutivité verticale :</strong>
+                                        <ul>
+                                            <li>Support pour l'expansion des cœurs CPU</li>
+                                            <li>Augmentation de la capacité mémoire</li>
+                                            <li>Capacités d'expansion de stockage</li>
+                                            <li>Outils d'optimisation de base de données</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Évolutivité horizontale :</strong>
+                                        <ul>
+                                            <li>Répartition de charge sur plusieurs serveurs</li>
+                                            <li>Capacités de traitement distribué</li>
+                                            <li>Réplication multi-sites</li>
+                                            <li>Support de burst dans le cloud</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Caractéristiques architecturales :</strong>
+                                        <ul>
+                                            <li>Architecture microservices</li>
+                                            <li>Support des conteneurs (Docker)</li>
+                                            <li>Orchestration avec Kubernetes</li>
+                                            <li>Capacités d'auto-scaling</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What are the system's capacity limits?</h4>
+                                <h4 class="fr">Quelles sont les limites de capacité du système?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Our system supports enterprise-scale operations:</p>
+                                <ul class="en">
+                                    <li><strong>Storage Capacity:</strong>
+                                        <ul>
+                                            <li>Document storage: Unlimited (hardware dependent)</li>
+                                            <li>Database size: Up to 524PB (SQL Server limit)</li>
+                                            <li>File size: Up to 1TB per document</li>
+                                            <li>Batch size: Up to 100,000 documents</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>User Capacity:</strong>
+                                        <ul>
+                                            <li>Named users: Unlimited</li>
+                                            <li>Concurrent users: Based on license</li>
+                                            <li>User groups: Up to 10,000</li>
+                                            <li>Permission sets: Unlimited</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Processing Limits:</strong>
+                                        <ul>
+                                            <li>OCR languages: 200+ simultaneously</li>
+                                            <li>Workflow steps: Up to 1,000 per process</li>
+                                            <li>Custom fields: Up to 1,000 per document type</li>
+                                            <li>Index values: Unlimited</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Integration Capacity:</strong>
+                                        <ul>
+                                            <li>API calls: 10,000 per minute</li>
+                                            <li>Concurrent integrations: Unlimited</li>
+                                            <li>Data transfer: Up to 1GB per transaction</li>
+                                            <li>Connected systems: Unlimited</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Notre système prend en charge des opérations à grande échelle pour les
+                                    entreprises :</p>
+                                <ul class="fr">
+                                    <li><strong>Capacité de stockage :</strong>
+                                        <ul>
+                                            <li>Stockage de documents : Illimité (dépend du matériel)</li>
+                                            <li>Taille de base de données : Jusqu'à 524PB (limite SQL Server)</li>
+                                            <li>Taille de fichier : Jusqu'à 1 To par document</li>
+                                            <li>Taille de lot : Jusqu'à 100 000 documents</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Capacité des utilisateurs :</strong>
+                                        <ul>
+                                            <li>Utilisateurs nommés : Illimité</li>
+                                            <li>Utilisateurs simultanés : En fonction de la licence</li>
+                                            <li>Groupes d'utilisateurs : Jusqu'à 10 000</li>
+                                            <li>Ensembles de permissions : Illimité</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Limites de traitement :</strong>
+                                        <ul>
+                                            <li>Langues OCR : Plus de 200 simultanément</li>
+                                            <li>Étapes de workflow : Jusqu'à 1 000 par processus</li>
+                                            <li>Champs personnalisés : Jusqu'à 1 000 par type de document</li>
+                                            <li>Valeurs d'index : Illimité</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Capacité d'intégration :</strong>
+                                        <ul>
+                                            <li>Appels API : 10 000 par minute</li>
+                                            <li>Intégrations simultanées : Illimité</li>
+                                            <li>Transfert de données : Jusqu'à 1 Go par transaction</li>
+                                            <li>Systèmes connectés : Illimité</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementation & Support Section -->
+                    <div class="faq-category">
+                        <h3 class="en">Implementation & Support</h3>
+                        <h3 class="fr">Mise en Œuvre et Support</h3>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How long does implementation take?</h4>
+                                <h4 class="fr">Combien de temps dure la mise en œuvre?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Implementation timelines vary based on project scope:</p>
+                                <ul class="en">
+                                    <li><strong>Standard Implementation:</strong>
+                                        <ul>
+                                            <li>Small deployments: 2-4 weeks</li>
+                                            <li>Medium deployments: 4-8 weeks</li>
+                                            <li>Large enterprise: 8-12 weeks</li>
+                                            <li>Complex integrations: 12-16 weeks</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Implementation Phases:</strong>
+                                        <ul>
+                                            <li>Planning and Analysis: 1-2 weeks</li>
+                                            <li>Installation and Configuration: 1-2 weeks</li>
+                                            <li>Integration Setup: 2-4 weeks</li>
+                                            <li>Testing and Validation: 1-2 weeks</li>
+                                            <li>Training: 1-2 weeks</li>
+                                            <li>Go-Live and Stabilization: 1-2 weeks</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Les délais de mise en œuvre varient en fonction de la portée du projet :
+                                </p>
+                                <ul class="fr">
+                                    <li><strong>Mise en œuvre standard :</strong>
+                                        <ul>
+                                            <li>Petits déploiements : 2-4 semaines</li>
+                                            <li>Déploiements moyens : 4-8 semaines</li>
+                                            <li>Grandes entreprises : 8-12 semaines</li>
+                                            <li>Intégrations complexes : 12-16 semaines</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Phases de mise en œuvre :</strong>
+                                        <ul>
+                                            <li>Planification et analyse : 1-2 semaines</li>
+                                            <li>Installation et configuration : 1-2 semaines</li>
+                                            <li>Configuration des intégrations : 2-4 semaines</li>
+                                            <li>Tests et validation : 1-2 semaines</li>
+                                            <li>Formation : 1-2 semaines</li>
+                                            <li>Mise en production et stabilisation : 1-2 semaines</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What training and support do you provide?</h4>
+                                <h4 class="fr">Quelle formation et quel support fournissez-vous?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We offer comprehensive training and support:</p>
+                                <ul class="en">
+                                    <li><strong>Training Options:</strong>
+                                        <ul>
+                                            <li>On-site training sessions</li>
+                                            <li>Virtual instructor-led training</li>
+                                            <li>Admin technical training</li>
+                                            <li>End-user training</li>
+                                            <li>Custom training programs</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Support Levels:</strong>
+                                        <ul>
+                                            <li>24/7 Premium Support</li>
+                                            <li>Standard Business Hours Support</li>
+                                            <li>Email Support</li>
+                                            <li>Phone Support</li>
+                                            <li>Remote Assistance</li>
+                                            <li>On-site Support (when needed)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Support Response Times:</strong>
+                                        <ul>
+                                            <li>Critical issues: < 1 hour</li>
+                                            <li>High priority: < 4 hours</li>
+                                            <li>Medium priority: < 8 hours</li>
+                                            <li>Low priority: Next business day</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous offrons une formation et un support complets :</p>
+                                <ul class="fr">
+                                    <li><strong>Options de formation :</strong>
+                                        <ul>
+                                            <li>Sessions de formation sur site</li>
+                                            <li>Formation virtuelle dirigée par un instructeur</li>
+                                            <li>Formation technique pour les administrateurs</li>
+                                            <li>Formation pour les utilisateurs finaux</li>
+                                            <li>Programmes de formation personnalisés</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Niveaux de support :</strong>
+                                        <ul>
+                                            <li>Support Premium 24/7</li>
+                                            <li>Support pendant les heures ouvrables standard</li>
+                                            <li>Support par e-mail</li>
+                                            <li>Support téléphonique</li>
+                                            <li>Assistance à distance</li>
+                                            <li>Support sur site (si nécessaire)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Temps de réponse du support :</strong>
+                                        <ul>
+                                            <li>Problèmes critiques : Moins d'1 heure</li>
+                                            <li>Haute priorité : Moins de 4 heures</li>
+                                            <li>Priorité moyenne : Moins de 8 heures</li>
+                                            <li>Basse priorité : Jour ouvrable suivant</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">How do you handle system maintenance?</h4>
+                                <h4 class="fr">Comment gérez-vous la maintenance du système?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">We provide comprehensive maintenance services: </p>
+                                <ul class="en">
+                                    <li><strong>Scheduled Maintenance:</strong>
+                                        <ul>
+                                            <li>Monthly security updates</li>
+                                            <li>Quarterly feature updates</li>
+                                            <li>Annual system reviews</li>
+                                            <li>Database optimization</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Monitoring:</strong>
+                                        <ul>
+                                            <li>24/7 system monitoring</li>
+                                            <li>Performance tracking</li>
+                                            <li>Capacity planning</li>
+                                            <li>Security monitoring</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Maintenance Windows:</strong>
+                                        <ul>
+                                            <li>Planned during off-peak hours</li>
+                                            <li>Advance notification provided</li>
+                                            <li>Minimal system downtime</li>
+                                            <li>Rollback procedures in place</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nous fournissons des services de maintenance complets :</p>
+                                <ul class="fr">
+                                    <li><strong>Maintenance planifiée :</strong>
+                                        <ul>
+                                            <li>Mises à jour de sécurité mensuelles</li>
+                                            <li>Mises à jour des fonctionnalités trimestrielles</li>
+                                            <li>Révisions système annuelles</li>
+                                            <li>Optimisation de base de données</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Surveillance :</strong>
+                                        <ul>
+                                            <li>Surveillance système 24/7</li>
+                                            <li>Suivi des performances</li>
+                                            <li>Planification de la capacité</li>
+                                            <li>Surveillance de la sécurité</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Fenêtres de maintenance :</strong>
+                                        <ul>
+                                            <li>Planifiées en dehors des heures de pointe</li>
+                                            <li>Notification préalable fournie</li>
+                                            <li>Temps d'arrêt système minimal</li>
+                                            <li>Procédures de retour en arrière en place</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">What ongoing support services are included?</h4>
+                                <h4 class="fr">Quels services de support continu sont inclus?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Our support services include:</p>
+                                <ul class="en">
+                                    <li><strong>Technical Support:</strong>
+                                        <ul>
+                                            <li>Dedicated support team</li>
+                                            <li>Issue resolution</li>
+                                            <li>Performance optimization</li>
+                                            <li>Configuration assistance</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>System Health:</strong>
+                                        <ul>
+                                            <li>Regular health checks</li>
+                                            <li>Performance monitoring</li>
+                                            <li>Capacity management</li>
+                                            <li>Preventive maintenance</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Updates & Upgrades:</strong>
+                                        <ul>
+                                            <li>Security patches</li>
+                                            <li>Feature updates</li>
+                                            <li>Version upgrades</li>
+                                            <li>Enhancement requests</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Documentation:</strong>
+                                        <ul>
+                                            <li>Knowledge base access</li>
+                                            <li>Technical documentation</li>
+                                            <li>Best practices guides</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Nos services de support incluent :</p>
+                                <ul class="fr">
+                                    <li><strong>Support technique :</strong>
+                                        <ul>
+                                            <li>Équipe de support dédiée</li>
+                                            <li>Résolution des problèmes</li>
+                                            <li>Optimisation des performances</li>
+                                            <li>Assistance pour la configuration</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Santé du système :</strong>
+                                        <ul>
+                                            <li>Contrôles de santé réguliers</li>
+                                            <li>Surveillance des performances</li>
+                                            <li>Gestion de la capacité</li>
+                                            <li>Maintenance préventive</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Mises à jour et améliorations :</strong>
+                                        <ul>
+                                            <li>Patches de sécurité</li>
+                                            <li>Mises à jour des fonctionnalités</li>
+                                            <li>Mises à niveau de version</li>
+                                            <li>Demandes d'amélioration</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Documentation :</strong>
+                                        <ul>
+                                            <li>Accès à une base de connaissances</li>
+                                            <li>Documentation technique</li>
+                                            <li>Guides de bonnes pratiques</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <h4 class="en">Do you provide assistance with document scanning?</h4>
+                                <h4 class="fr">Fournissez-vous une assistance pour la numérisation des documents?</h4>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="en">Yes, we provide a dedicated team to handle document scanning at the start
+                                    of the project:</p>
+                                <ul class="en">
+                                    <li><strong>Initial Scanning Period:</strong>
+                                        <ul>
+                                            <li>Our team will manage the scanning of documents for the first 3 to 6
+                                                months.</li>
+                                            <li>This ensures a smooth onboarding process and rapid digitization of your
+                                                records.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transition to Internal Team:</strong>
+                                        <ul>
+                                            <li>We will train your team members on how to use the software effectively.
+                                            </li>
+                                            <li>Training includes document uploading, indexing, and retrieval processes.
+                                            </li>
+                                            <li>Support will be provided throughout the transition period.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p class="fr">Oui, nous fournissons une équipe dédiée pour gérer la numérisation des
+                                    documents au début du projet :</p>
+                                <ul class="fr">
+                                    <li><strong>Période initiale de numérisation :</strong>
+                                        <ul>
+                                            <li>Notre équipe prendra en charge la numérisation des documents pendant les
+                                                3 à 6 premiers mois.</li>
+                                            <li>Cela garantit un processus d'intégration fluide et une numérisation
+                                                rapide de vos archives.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transition vers une équipe interne :</strong>
+                                        <ul>
+                                            <li>Nous formerons vos collaborateurs à l'utilisation efficace du logiciel.
+                                            </li>
+                                            <li>La formation couvre le téléchargement, l'indexation et la récupération
+                                                des documents.</li>
+                                            <li>Un support sera assuré pendant toute la période de transition.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="en">&copy; 2024 Veritech - All Rights Reserved | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+        <p class="fr">&copy; 2024 Veritech - Tous droits réservés | <a
+                href="mailto:info@veritech-rdc.com">info@veritech-rdc.com</a></p>
+    </footer>
+</body>
+
+</html>
